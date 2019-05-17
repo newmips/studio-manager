@@ -86,11 +86,19 @@ module.exports = () => {
 
 				stacksDone.push(stack)
 			}
+
 		}
+
+		// Clean stack that do no exist anymore
+		let environments = await models.E_environment.findAll();
+
+		for (env of environments)
+			if(stacksDone.indexOf(env.f_name) == -1)
+				await env.destroy();
 
 		return;
 	})().then(_ => {
-		console.log("UPDATE ENVIRONMENT DONE.");
+		return true;
 	}).catch(err => {
 		console.error("ERROR WHILE UPDATING ENVIRONMENT LIST:", err.message)
 	})

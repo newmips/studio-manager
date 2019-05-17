@@ -101,8 +101,6 @@ exports.generateStack = async (stackName, containerIP, databaseIP) => {
         }
     });
 
-    console.log(composeContent)
-
     let options = {
         uri: conf.f_portainer_api_url + "/stacks",
         headers: {
@@ -126,4 +124,84 @@ exports.generateStack = async (stackName, containerIP, databaseIP) => {
 
     // Return generated stack
     return generateCall;
+}
+
+exports.deleteStack = async (stackName) => {
+
+    console.log("deleteStack");
+
+    let conf = await models.E_configuration.findOne({
+        where: {
+            id: 1
+        }
+    });
+
+    let tokenCall = await request({
+        uri: conf.f_portainer_api_url + "/auth",
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: {
+            Username: conf.f_portainer_login,
+            Password: conf.f_portainer_password
+        },
+        json: true // Automatically stringifies the body to JSON
+    });
+
+    // Full token
+    let token = "Bearer "+ tokenCall.jwt;
+
+    // Getting stack to delete
+    let stackList = await request({
+        uri: conf.f_portainer_api_url + "/stacks",
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': token
+        },
+        json: true // Automatically stringifies the body to JSON
+    });
+
+    // Looking for stack with given stackName
+    stackList = stackList.filter(x =>x.Name == stackName);
+
+    if(stackList.length == 0)
+        throw new Error("Unable to find the stack "+stackName+" on portainer.")
+
+    await request.delete({
+        uri: conf.f_portainer_api_url + "/stacks/"+stackList[0].Id,
+        headers: {
+            'Content-Type': 'multipart/form-data',
+            'Authorization': token
+        },
+        json: true // Automatically stringifies the body to JSON
+    });
+
+    let allVolumes = await request({
+        uri: conf.f_portainer_api_url + "/endpoints/1/docker/volumes",
+        method: "GET",
+        headers: {
+            'Content-Type': 'multipart/form-data',
+            'Authorization': token
+        },
+        json: true
+    });
+
+    // Deleting linked volumes
+    for (var i = 0; i < allVolumes.length; i++) {
+        if(allVolumes[i].Name.indexOf(stackName + "_workspace") != -1 || allVolumes[i].Name.indexOf(stackName + "_database")){
+            await request({
+                uri: conf.f_portainer_api_url + "/endpoints/1/docker/volumes/"+allVolumes[i].Name,
+                method: "DELETE",
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    'Authorization': token
+                },
+                json: true
+            });
+        }
+    }
+
+    return ;
 }

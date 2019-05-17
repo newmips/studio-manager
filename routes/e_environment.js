@@ -8,11 +8,14 @@ var filterDataTable = require('../utils/filter_datatable');
 var models = require('../models/');
 var attributes = require('../models/attributes/e_environment');
 var options = require('../models/options/e_environment');
+
 var model_builder = require('../utils/model_builder');
 var entity_helper = require('../utils/entity_helper');
 var file_helper = require('../utils/file_helper');
 var status_helper = require('../utils/status_helper');
 var component_helper = require('../utils/component_helper');
+var attr_helper = require('../utils/attr_helper');
+
 var globalConfig = require('../config/global');
 var fs = require('fs-extra');
 var dust = require('dustjs-linkedin');
@@ -212,7 +215,7 @@ router.get('/create_form', block_access.actionAccessMiddleware("environment", "c
 
 router.post('/create', block_access.actionAccessMiddleware("environment", "create"), function(req, res) {
 
-    req.body.f_name = req.body.f_name.replace(/[-_.]/g, "").toLowerCase();
+    req.body.f_name = attr_helper.clearString(req.body.f_name).replace(/[-_.]/g, "").toLowerCase();
 
     portainerAPI.generateStack(req.body.f_name, req.body.f_container_ip, req.body.f_database_ip).then(err => {
 
@@ -616,19 +619,32 @@ router.post('/delete', block_access.actionAccessMiddleware("environment", "delet
             logger.debug("No data entity found.");
             return res.render('common/error', data);
         }
-        deleteObject.destroy().then(function() {
-            req.session.toastr = [{
-                message: 'message.delete.success',
-                level: "success"
-            }];
 
-            var redirect = '/environment/list';
-            if (typeof req.body.associationFlag !== 'undefined')
-                redirect = '/' + req.body.associationUrl + '/show?id=' + req.body.associationFlag + '#' + req.body.associationAlias;
-            res.redirect(redirect);
-            entity_helper.removeFiles("e_environment", deleteObject, attributes);
+        portainerAPI.deleteStack(deleteObject.f_name).then(err => {
+
+            deleteObject.destroy().then(function() {
+                req.session.toastr = [{
+                    message: 'message.delete.success',
+                    level: "success"
+                }];
+
+                var redirect = '/environment/list';
+                if (typeof req.body.associationFlag !== 'undefined')
+                    redirect = '/' + req.body.associationUrl + '/show?id=' + req.body.associationFlag + '#' + req.body.associationAlias;
+                res.redirect(redirect);
+                entity_helper.removeFiles("e_environment", deleteObject, attributes);
+            }).catch(function(err) {
+                entity_helper.error(err, req, res, '/environment/list', "e_environment");
+            });
+
         }).catch(function(err) {
-            entity_helper.error(err, req, res, '/environment/list', "e_environment");
+            console.error("ERROR WHILE DELETING STUDIO STACK")
+            console.log(err);
+            req.session.toastr = [{
+                message: "Une erreur s'est produite lors de la suppression de la stack sur Portainer.",
+                level: "error"
+            }];
+            return res.redirect("/environment/list");
         });
     }).catch(function(err) {
         entity_helper.error(err, req, res, '/environment/list', "e_environment");
