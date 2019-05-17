@@ -1,0 +1,63 @@
+{>"main_layout"/}
+
+{<custom_css}
+{! Admin LTE Layout !}
+<link href="/css/AdminLteV2/layouts/layout-default.css" rel="stylesheet" type="text/css" data-type="layout" data-layout="default">
+{+custom_css_2 /}
+{/custom_css}
+
+{<modules}
+<select id="dynamic_select" data-width="100%" class="form-control select" onchange="navigate()">
+    {#moduleAccess module="home"}
+    <option data-module="m_home" value="/default/home" selected="">
+        {#__ key="module.m_home" /}
+    </option>
+    {/moduleAccess}
+    {#moduleAccess module="administration"}
+    <option data-module="m_administration" value="/default/administration">
+        {#__ key="module.m_administration" /}
+    </option>
+    {/moduleAccess}
+</select>
+{/modules}
+
+{<sidebar}
+<ul id="sortable" class="sidebar-menu" style="white-space: pre-wrap;">
+    {#entityAccess entity="configuration"}
+    <li id="configuration_menu_item" style="display:block;" class="treeview">
+        <a href="/configuration/update_form">
+            <i class="fa fa-cogs"></i>
+            <span>{#__ key="entity.e_configuration.label_entity" /}</span>
+            <i class="fa fa-angle-right pull-right"></i>
+        </a>
+    </li>
+    {/entityAccess}
+    {#entityAccess entity="environment"}
+    <li id="environment_menu_item" style="display:block;" class="treeview">
+        <a href="#">
+            <i class="fa fa-stack-exchange"></i>
+            <span>{#__ key="entity.e_environment.label_entity" /}</span>
+            <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+            {#actionAccess entity="environment" action="create"}
+            <li>
+                <a href="/environment/create_form">
+                    <i class="fa fa-angle-double-right"></i>
+                    {#__ key="operation.create" /}
+                </a>
+            </li>
+            {/actionAccess}
+            {#actionAccess entity="environment" action="read"}
+            <li>
+                <a href="/environment/list">
+                    <i class="fa fa-angle-double-right"></i>
+                    {#__ key="operation.list" /}
+                </a>
+            </li>
+            {/actionAccess}
+        </ul>
+    </li>
+    {/entityAccess}
+</ul>
+{/sidebar}

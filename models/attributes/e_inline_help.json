@@ -1,0 +1,29 @@
+{
+    "id": {
+        "type": "INTEGER",
+        "autoIncrement": true,
+        "primaryKey": true
+    },
+    "version": {
+        "type": "INTEGER",
+        "defaultValue": 1
+    },
+    "f_entity": {
+        "type": "STRING",
+        "newmipsType": "string",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_field": {
+        "type": "STRING",
+        "newmipsType": "string",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_content": {
+        "type": "TEXT",
+        "newmipsType": "text",
+        "defaultValue": null,
+        "validate": true
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "id": {
+        "type": "INTEGER",
+        "autoIncrement": true,
+        "primaryKey": true
+    },
+    "version": {
+        "type": "INTEGER",
+        "defaultValue": 1
+    },
+    "f_message": {
+        "type": "TEXT",
+        "newmipsType": "text",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_phone_numbers": {
+        "type": "STRING",
+        "newmipsType": "string",
+        "defaultValue": null,
+        "validate": true
+    }
+}

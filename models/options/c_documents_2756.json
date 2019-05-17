@@ -1,0 +1,9 @@
+[
+    {
+        "target": "e_task",
+        "relation": "belongsTo",
+        "foreignKey": "fk_id_e_task",
+        "as": "e_task",
+        "structureType": "localfilestorage"
+    }
+]

@@ -1,0 +1,5 @@
+{
+    "queries": [
+        "ALTER TABLE 1_e_environment ADD COLUMN `f_url` VARCHAR(255) DEFAULT null;"
+    ]
+}

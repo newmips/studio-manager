@@ -1,0 +1,51 @@
+<div id="fields" class="row">
+    <div data-field="f_name" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_name">
+                {#__ key="entity.e_environment.f_name"/}&nbsp;
+                {@inline_help field="f_name"}
+                <i data-field="f_name" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_environment.f_name" /}' name="f_name" value="{f_name}" type="text" maxlength="255">
+</div>
+</div>
+<div data-field="f_container_ip" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_container_ip">
+                {#__ key="entity.e_environment.f_container_ip"/}&nbsp;
+                {@inline_help field="f_container_ip"}
+                    <i data-field="f_container_ip" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_environment.f_container_ip" /}' name="f_container_ip" value="{f_container_ip}" type="text" maxlength="255">
+</div>
+</div>
+<div data-field="f_database_ip" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_database_ip">
+                {#__ key="entity.e_environment.f_database_ip"/}&nbsp;
+                {@inline_help field="f_database_ip"}
+                    <i data-field="f_database_ip" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_environment.f_database_ip" /}' name="f_database_ip" value="{f_database_ip}" type="text" maxlength="255">
+</div>
+</div>
+<div data-field="f_url" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_url">
+                {#__ key="entity.e_environment.f_url"/}&nbsp;
+                {@inline_help field="f_url"}
+                    <i data-field="f_url" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+    <div class="input-group">
+        <div class="input-group-addon">
+            <i class="fa fa-link"></i>
+        </div>
+    <input class="form-control input" placeholder='{#__ key="entity.e_environment.f_url" /}' name="f_url" value="{f_url}" type="url" data-type="url">
+    </div>
+</div>
+</div>
+</div>

@@ -1,0 +1,41 @@
+/*
+ * Name: Black Light
+ * Main color: #222D32
+ * Author: Newmips
+ */
+
+@import url("../../light.css");
+
+.main-header .navbar {
+  background-color: #222D32;
+}
+.main-header .navbar .sidebar-toggle:hover {
+  background-color: #222D32;
+}
+@media (max-width: 767px) {
+  .main-header .navbar .dropdown-menu li a:hover {
+    background: #222222;
+  }
+}
+.main-header .logo {
+  background-color: #152025;
+}
+.main-header .logo:hover {
+  background-color: #222D32;
+}
+.main-header li.user-header {
+  background-color: #222;
+}
+.sidebar-menu > li:hover > a,
+.sidebar-menu > li.active > a {
+  border-left-color: #222D32;
+}
+.form-title{
+    background-color: #f9fafc;
+    border: 1px solid #222D32;
+    border-radius: 3px;
+}
+.form-title h3{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

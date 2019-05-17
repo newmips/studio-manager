@@ -1,0 +1,29 @@
+{
+	"version": 0,
+	"api_enabled": true,
+	"socket": {
+		"enabled": true,
+		"chat": false,
+		"notification": true
+	},
+	"contact_field_for_sms": "f_phone",
+	"maintenance": false,
+	"synchronization": {
+		"ignore_list": [
+			"e_action",
+			"e_api_credentials",
+			"e_group",
+			"e_role",
+			"e_media_function",
+			"e_media_mail",
+			"e_media_notification",
+			"e_notification",
+			"e_status",
+			"e_synchronization",
+			"e_synchro_credentials",
+			"e_translation",
+			"e_media_sms",
+			"e_user"
+		]
+	}
+}

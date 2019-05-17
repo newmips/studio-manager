@@ -1,0 +1,80 @@
+<div id="fields" class="dontbreakitplz row">
+    <div data-field="f_task_name" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_task_name">
+                {#__ key="entity.e_media_task.f_task_name"/}&nbsp;
+                {@inline_help field="f_task_name"}
+                <i data-field="f_task_name" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_media_task.f_task_name" /}' name="f_task_name_print" value="{f_task_name}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_task_type" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_task_type">
+                {#__ key="entity.e_media_task.f_task_type"/}&nbsp;
+                {@inline_help field="f_task_type"}
+                    <i data-field="f_task_type" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_media_task.f_task_type" /}' name="f_task_type_print" value="{f_task_type}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_assignment_logic" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_assignment_logic">
+                {#__ key="entity.e_media_task.f_assignment_logic"/}&nbsp;
+                {@inline_help field="f_assignment_logic"}
+                    <i data-field="f_assignment_logic" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_media_task.f_assignment_logic" /}' name="f_assignment_logic_print" value="{f_assignment_logic}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_program_file" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_program_file">
+                {#__ key="entity.e_media_task.f_program_file"/}&nbsp;
+                {@inline_help field="f_program_file"}
+                    <i data-field="f_program_file" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<div class="input-group">
+		<div class="input-group-addon">
+			<i class="fa fa-download"></i>
+		</div>
+		<a href="/default/download?entity=e_media_task&amp;f={f_program_file|urlencode}" class="form-control text-left" name="f_program_file">{f_program_file|filename}</a>
+	</div>
+</div>
+</div>
+<div data-field="f_data_flow" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_data_flow">
+                {#__ key="entity.e_media_task.f_data_flow"/}&nbsp;
+                {@inline_help field="f_data_flow"}
+                    <i data-field="f_data_flow" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+    <div class="show-textarea">{f_data_flow|s}</div>
+</div>
+</div>
+<div data-field="f_program_type" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_program_type">
+                {#__ key="entity.e_media_task.f_program_type"/}&nbsp;
+                {@inline_help field="f_program_type"}
+                    <i data-field="f_program_type" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+    {^f_program_type}
+        <input class="form-control input" placeholder='{#__ key="entity.e_media_task.f_program_type" /}' name="f_program_type_print" type="text" readonly="">
+    {/f_program_type}
+    {#enum_radio.e_media_task.f_program_type}
+        {@eq key=f_program_type value="{.value}" }
+            <input class="form-control input" placeholder='{#__ key="entity.e_media_task.f_program_type" /}' name="f_program_type_print" value="{.translation}" type="text" readonly="">
+        {/eq}
+    {/enum_radio.e_media_task.f_program_type}
+</div>
+</div>
+</div>

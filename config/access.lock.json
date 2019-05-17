@@ -1,0 +1,302 @@
+{
+    "home": {
+        "groups": [],
+        "entities": [
+            {
+                "name": "configuration",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "environment",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            }
+        ]
+    },
+    "administration": {
+        "groups": [],
+        "entities": [
+            {
+                "name": "user",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "role",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "group",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "api_credentials",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "synchronization",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "synchro_credentials",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "status",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "translation",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "media",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "action",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "robot",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "task",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "history_e_task_s_state",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "documents_2756",
+                "groups": [],
+                "actions": {
+                    "create": [],
+                    "update": [],
+                    "read": [],
+                    "delete": []
+                }
+            },
+            {
+                "name": "media_mail",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "media_notification",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "media_sms",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "media_task",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "notification",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "inline_help",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "delete": [],
+                    "update": []
+                }
+            },
+            {
+                "name": "access_settings",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "update": [],
+                    "delete": []
+                }
+            },
+            {
+                "name": "db_tool",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "update": [],
+                    "delete": []
+                }
+            },
+            {
+                "name": "import_export",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "update": [],
+                    "delete": []
+                }
+            },
+            {
+                "name": "access_tool",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "update": [],
+                    "delete": []
+                }
+            },
+            {
+                "name": "access_settings_role",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "update": [],
+                    "delete": []
+                }
+            },
+            {
+                "name": "access_settings_group",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "update": [],
+                    "delete": []
+                }
+            },
+            {
+                "name": "access_settings_api",
+                "groups": [],
+                "actions": {
+                    "read": [],
+                    "create": [],
+                    "update": [],
+                    "delete": []
+                }
+            }
+        ]
+    }
+}

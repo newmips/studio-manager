@@ -1,0 +1,75 @@
+{
+    "id": {
+        "type": "INTEGER",
+        "autoIncrement": true,
+        "primaryKey": true
+    },
+    "version": {
+        "type": "INTEGER",
+        "defaultValue": 1
+    },
+    "s_state": {
+        "type": "VIRTUAL",
+        "history_table": "e_history_2756_15144",
+        "history_model": "e_history_e_task_s_state"
+    },
+    "f_title": {
+        "type": "STRING",
+        "newmipsType": "string",
+        "defaultValue": "",
+        "validate": true,
+        "allowNull": false
+    },
+    "f_type": {
+        "type": "ENUM",
+        "values": [
+            "manual",
+            "automatic"
+        ],
+        "newmipsType": "enum",
+        "defaultValue": "Manual",
+        "validate": true
+    },
+    "f_planned_date": {
+        "type": "DATE",
+        "newmipsType": "date",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_execution_start_date": {
+        "type": "DATE",
+        "newmipsType": "date",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_execution_finish_date": {
+        "type": "DATE",
+        "newmipsType": "date",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_duration": {
+        "type": "STRING",
+        "newmipsType": "decimal",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_data_flow": {
+        "type": "TEXT",
+        "newmipsType": "regular text",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_program_file": {
+        "type": "STRING",
+        "newmipsType": "file",
+        "defaultValue": null,
+        "validate": true
+    },
+    "f_procedure": {
+        "type": "TEXT",
+        "newmipsType": "regular text",
+        "defaultValue": null,
+        "validate": true
+    }
+}

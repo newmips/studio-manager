@@ -1,0 +1,68 @@
+<div id="fields" class="dontbreakitplz row">
+    <div data-field="f_to" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_to">
+                {#__ key="entity.e_media_mail.f_to"/}&nbsp;
+                {@inline_help field="f_to"}
+                <i data-field="f_to" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_media_mail.f_to" /}' name="f_to_print" value="{f_to}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_cc" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_cc">
+                {#__ key="entity.e_media_mail.f_cc"/}&nbsp;
+                {@inline_help field="f_cc"}
+                    <i data-field="f_cc" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_media_mail.f_cc" /}' name="f_cc_print" value="{f_cc}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_cci" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_cci">
+                {#__ key="entity.e_media_mail.f_cci"/}&nbsp;
+                {@inline_help field="f_cci"}
+                    <i data-field="f_cci" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_media_mail.f_cci" /}' name="f_cci_print" value="{f_cci}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_from" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_from">
+                {#__ key="entity.e_media_mail.f_from"/}&nbsp;
+                {@inline_help field="f_from"}
+                    <i data-field="f_from" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_media_mail.f_from" /}' name="f_from_print" value="{f_from}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_subject" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_subject">
+                {#__ key="entity.e_media_mail.f_subject"/}&nbsp;
+                {@inline_help field="f_subject"}
+                    <i data-field="f_subject" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_media_mail.f_subject" /}' name="f_subject_print" value="{f_subject}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_content" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_content">
+                {#__ key="entity.e_media_mail.f_content"/}&nbsp;
+                {@inline_help field="f_content"}
+                    <i data-field="f_content" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+    <div class="show-textarea">{f_content|s}</div>
+</div>
+</div>
+</div>

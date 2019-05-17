@@ -1,0 +1,35 @@
+<div id="fields" class="dontbreakitplz row">
+    <div data-field="f_entity" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_entity">
+                {#__ key="entity.e_inline_help.f_entity"/}&nbsp;
+                {@inline_help field="f_entity"}
+                <i data-field="f_entity" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_inline_help.f_entity" /}' name="f_entity_print" value="{f_entity}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_field" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_field">
+                {#__ key="entity.e_inline_help.f_field"/}&nbsp;
+                {@inline_help field="f_field"}
+                    <i data-field="f_field" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_inline_help.f_field" /}' name="f_field_print" value="{f_field}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_content" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_content">
+                {#__ key="entity.e_inline_help.f_content"/}&nbsp;
+                {@inline_help field="f_content"}
+                    <i data-field="f_content" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+    <div class="show-textarea">{f_content|s}</div>
+</div>
+</div>
+</div>

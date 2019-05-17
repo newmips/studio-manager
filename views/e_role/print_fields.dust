@@ -1,0 +1,32 @@
+<div id="fields" class="dontbreakitplz row">
+    <div data-field="f_label" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_label">
+                {#__ key="entity.e_role.f_label"/}&nbsp;
+                {@inline_help field="f_label"}
+                <i data-field="f_label" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_role.f_label" /}' name="f_label_print" value="{f_label}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+</div><div class="dontbreakitplz">
+{@entityAccess entity="user" }
+<div id="r_user_print" class="row">
+    <div class="col-xs-12">
+        <h3>{@__ key="entity.e_user.name_entity" /}</h3>
+        <hr>
+    </div>
+    <div class="col-xs-12">
+        {#r_user e_user=r_user}
+        {@eq key=id value=e_user[0].id}
+        {>"e_user/list_fields" associationAlias="r_user" associationForeignKey="" associationFlag="" associationSource="" associationUrl="" for="hasMany" /}
+        {/eq}
+        {:else}
+        {>"e_user/list_fields" /}
+        {/r_user}
+    </div>
+<br>
+</div>
+{/entityAccess}
+</div>

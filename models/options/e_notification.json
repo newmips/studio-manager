@@ -1,0 +1,12 @@
+[
+    {
+        "target": "e_user",
+        "relation": "belongsToMany",
+        "foreignKey": "fk_id_e_notification",
+        "as": "r_user",
+        "showAs": "user",
+        "through": "1_e_notification_e_user",
+        "otherKey": "fk_id_e_user",
+        "structureType": "hasMany"
+    }
+]

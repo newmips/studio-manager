@@ -1,0 +1,57 @@
+<div id="fields" class="row">
+    <div data-field="f_title" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_title">
+                {#__ key="entity.e_notification.f_title"/}&nbsp;
+                {@inline_help field="f_title"}
+                <i data-field="f_title" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_notification.f_title" /}' name="f_title" value="{f_title}" type="text" maxlength="255">
+</div>
+</div>
+<div data-field="f_description" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_description">
+                {#__ key="entity.e_notification.f_description"/}&nbsp;
+                {@inline_help field="f_description"}
+                    <i data-field="f_description" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_notification.f_description" /}' name="f_description" value="{f_description}" type="text" maxlength="255">
+</div>
+</div>
+<div data-field="f_url" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_url">
+                {#__ key="entity.e_notification.f_url"/}&nbsp;
+                {@inline_help field="f_url"}
+                    <i data-field="f_url" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_notification.f_url" /}' name="f_url" value="{f_url}" type="text" maxlength="255">
+</div>
+</div>
+<div data-field="f_color" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_color">
+                {#__ key="entity.e_notification.f_color"/}&nbsp;
+                {@inline_help field="f_color"}
+                    <i data-field="f_color" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+    <input class="form-control input" placeholder='{#__ key="entity.e_notification.f_color" /}' name="f_color" value="{f_color}" type="color">
+</div>
+</div>
+<div data-field="f_icon" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_icon">
+                {#__ key="entity.e_notification.f_icon"/}&nbsp;
+                {@inline_help field="f_icon"}
+                    <i data-field="f_icon" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_notification.f_icon" /}' name="f_icon" value="{f_icon}" type="text" maxlength="255">
+</div>
+</div>
+</div>

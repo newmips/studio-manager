@@ -1,0 +1,94 @@
+<div class="nav-tabs-custom" id="tabs">
+    {^hideTab}
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">{#__ key="entity.e_notification.label_entity" /}</a></li>	{#entityAccess entity="user"}
+<li><a id="r_user-click" data-toggle="tab" data-tabtype="hasMany" href="#r_user">{#__ key="entity.e_notification.r_user" /}</a></li>
+{/entityAccess}</ul>   {/hideTab}	<div class="tab-content" style="min-height:275px;">		<div id="home" class="tab-pane fade in active"><div id="fields" class="row">
+    <div data-field="f_title" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_title">
+                {#__ key="entity.e_notification.f_title"/}&nbsp;
+                {@inline_help field="f_title"}
+                <i data-field="f_title" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_notification.f_title" /}' name="f_title" value="{f_title}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_description" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_description">
+                {#__ key="entity.e_notification.f_description"/}&nbsp;
+                {@inline_help field="f_description"}
+                    <i data-field="f_description" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_notification.f_description" /}' name="f_description" value="{f_description}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_url" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_url">
+                {#__ key="entity.e_notification.f_url"/}&nbsp;
+                {@inline_help field="f_url"}
+                    <i data-field="f_url" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_notification.f_url" /}' name="f_url" value="{f_url}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_color" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_color">
+                {#__ key="entity.e_notification.f_color"/}&nbsp;
+                {@inline_help field="f_color"}
+                    <i data-field="f_color" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+    <input class="form-control input" placeholder='{#__ key="entity.e_notification.f_color" /}' name="f_color" value="{f_color}" type="color" readonly="" disabled="">
+</div>
+</div>
+<div data-field="f_icon" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_icon">
+                {#__ key="entity.e_notification.f_icon"/}&nbsp;
+                {@inline_help field="f_icon"}
+                    <i data-field="f_icon" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_notification.f_icon" /}' name="f_icon" value="{f_icon}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+</div><div class="actions">
+    <form action="/notification/delete" method="post">
+        <div class="quicklinks">
+            <a class="btn btn-default" href="javascript:history.back();"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;{#__ key="button.return"/}</a>
+            {#actionAccess entity="notification" action="delete"}
+                <button class="btn btn-danger btn-confirm">
+                    <i class="fa fa-trash-o fa-md">&nbsp;&nbsp;</i>
+                    <span>{#__ key="button.delete"/}</span>
+                </button>
+                <input name="id" type="hidden" value="{e_notification.id}" class="form-control">
+            {/actionAccess}
+            {#actionAccess entity="notification" action="update"}
+                <a href="/notification/update_form?id={e_notification.id}" class="btn btn-warning">
+                    <i class="fa fa-pencil fa-md">&nbsp;&nbsp;</i><span>{#__ key="button.update"/}</span>
+                </a>
+            {/actionAccess}
+            {^hideButton}
+            {#actionAccess entity="notification" action="create"}
+                <a href="/notification/create_form" class="btn btn-success">
+                    <i class="fa fa-plus fa-md">&nbsp;&nbsp;</i><span>{#__ key="button.create"/}</span>
+                </a>
+            {/actionAccess}
+            {#actionAccess entity="notification" action="read"}
+                <a href="/notification/list" type="submit" class="btn btn-primary">
+                    <i class="fa fa-list fa-md">&nbsp;&nbsp;</i><span>{#__ key="button.list"/}</span>
+                </a>
+            {/actionAccess}
+            {/hideButton}
+        </div>
+    </form>
+</div></div>	{^hideTab}
+			{#entityAccess entity="user"}	<div id="r_user" class="ajax-tab tab-pane fade" data-tabtype="hasMany" data-asso-alias="r_user" data-asso-foreignkey="fk_id_notification" data-asso-flag="{id}" data-asso-source="e_notification" data-asso-url="notification"><div class="ajax-content sub-tab-table"></div></div>{/entityAccess}
+			{/hideTab}</div></div>

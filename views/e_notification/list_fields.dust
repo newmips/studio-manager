@@ -1,0 +1,62 @@
+<table id="table_e_notification" data-url="/notification/datalist" class="dataTable table table-bordered table-striped animated fadeIn" style="display: none;">
+    <thead class="main">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.e_notification.id_entity"/}&nbsp;
+                {#__ key="entity.e_notification.label_entity"/}
+            </th>
+            <th data-field="f_title" data-col="f_title" data-type="string">
+                {#__ key="entity.e_notification.f_title"/}
+            </th>
+            <th data-field="f_description" data-col="f_description" data-type="string">
+                {#__ key="entity.e_notification.f_description"/}
+            </th>
+            <th data-field="f_url" data-col="f_url" data-type="string">
+                {#__ key="entity.e_notification.f_url"/}
+            </th>
+            <th data-field="f_color" data-col="f_color" data-type="color">
+                {#__ key="entity.e_notification.f_color"/}
+            </th>
+            <th data-field="f_icon" data-col="f_icon" data-type="string">
+                {#__ key="entity.e_notification.f_icon"/}
+</th>
+			{#actionAccess entity="notification" action="read"}
+				<th></th>
+			{/actionAccess}
+			{#actionAccess entity="notification" action="update"}
+				<th></th>
+			{/actionAccess}
+			{#actionAccess entity="notification" action="delete"}
+				<th></th>
+			{/actionAccess}
+		</tr>
+    </thead>
+    <thead class="filters">
+    	<tr class="fields">
+    		<th data-field="id" data-col="id">
+				{#__ key="entity.e_notification.id_entity"/}&nbsp;{#__ key="entity.e_notification.label_entity"/}
+			</th><th data-field="f_title" data-col="f_title" data-type="string">
+{#__ key="entity.e_notification.f_title"/}
+</th><th data-field="f_description" data-col="f_description" data-type="string">
+{#__ key="entity.e_notification.f_description"/}
+</th><th data-field="f_url" data-col="f_url" data-type="string">
+{#__ key="entity.e_notification.f_url"/}
+</th><th data-field="f_color" data-col="f_color" data-type="color">
+{#__ key="entity.e_notification.f_color"/}
+</th><th data-field="f_icon" data-col="f_icon" data-type="string">
+{#__ key="entity.e_notification.f_icon"/}
+</th>
+			{#actionAccess entity="notification" action="read"}
+				<th></th>
+			{/actionAccess}
+			{#actionAccess entity="notification" action="update"}
+				<th></th>
+			{/actionAccess}
+			{#actionAccess entity="notification" action="delete"}
+				<th></th>
+			{/actionAccess}
+    	</tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>

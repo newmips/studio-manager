@@ -1,0 +1,10 @@
+[
+    {
+        "target": "e_api_credentials",
+        "relation": "belongsTo",
+        "foreignKey": "fk_id_api_credentials",
+        "as": "r_api_credentials",
+        "showAs": "",
+        "structureType": "hasOne"
+    }
+]

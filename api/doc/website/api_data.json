@@ -1,0 +1,112 @@
+[
+  {
+    "type": "get",
+    "url": "/api/getToken/",
+    "title": "1 - Basic Auth",
+    "version": "1.0.0",
+    "group": "1_General_knowledge",
+    "description": "<p>To be able to interact with the API, you need to generate a Bearer Token using the <code>/api/getToken/</code> url</p> <p>Set your HTTP header like so with basic64 encoding : <code>Authorization clientID:clientSecret</code></p>",
+    "examples": [
+      {
+        "title": "Example",
+        "content": "var request = require('request');\n\n// API credentials\nvar clientKey = 'THcfYQ7sGW3jRdq';\nvar clientSecret = 'dexXLYNwdhezlxk';\n\n// Base64 encoding\nvar auth = 'Basic ' + new Buffer(clientKey + ':' + clientSecret).toString('base64');\n\n// API request\nrequest(\n    {\n        url : 'http://127.0.0.1:9034/api/getToken',\n        headers : {\n            \"Authorization\" : auth\n        }\n    },\n    function (error, response, body) {\n    \tbody = JSON.parse(body);\n        console.log(body.token);\n    }\n);",
+        "type": "node"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "ClientID",
+            "description": "<p>Generated application's API credentials</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "ClientSecret",
+            "description": "<p>Generated application's API credentials</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>Bearer Token, required for further API calls</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 500": [
+          {
+            "group": "Error 500",
+            "optional": false,
+            "field": "BadAuthorizationHeader",
+            "description": "<p>There is an invalid or no authorization header</p>"
+          }
+        ],
+        "Error 401": [
+          {
+            "group": "Error 401",
+            "optional": false,
+            "field": "AuthenticationFailed",
+            "description": "<p>Couldn't match clientID/clientSecret with database</p>"
+          }
+        ]
+      }
+    },
+    "filename": "/home/newmipsmsi/newmips/workspace/92/api/doc/doc_descriptor.js",
+    "groupTitle": "1_General_knowledge",
+    "name": "GetApiGettoken"
+  },
+  {
+    "type": "get",
+    "url": "/api/user?limit=42&offset=0&f_name=Doe&f_is_children=1&fk_id_hair_style=4",
+    "title": "2 - Filter results",
+    "group": "1_General_knowledge",
+    "description": "<p>Each entity's services <strong>1 - Find all</strong> and <strong>2 - Find one</strong> can accept an optional query parameter to filter the results.<br><br> To filter on a specific field value, you need to specify the field and its encoded value along with the query parameters<br> All fields and foreignKeys of an entity can be filtered that way. Have a look at target entity's <strong>create</strong> service's body to know what is available<br><br> Ex:<br>You want to get all blonde users that are children of the same family &quot;Doe&quot;, by filtering on <code>f_name</code> (string), <code>f_is_children</code> (boolean) and <code>fk_id_hair_style</code> (foreign key).<br><br> Using <code>get /api/user</code> service, you would do as follow :</p>",
+    "version": "0.0.0",
+    "filename": "/home/newmipsmsi/newmips/workspace/92/api/doc/doc_descriptor.js",
+    "groupTitle": "1_General_knowledge",
+    "name": "GetApiUserLimit42Offset0F_nameDoeF_is_children1Fk_id_hair_style4"
+  },
+  {
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "optional": false,
+            "field": "varname1",
+            "description": "<p>No type.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "varname2",
+            "description": "<p>With type.</p>"
+          }
+        ]
+      }
+    },
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "/home/newmipsmsi/newmips/workspace/92/api/doc/website/main.js",
+    "group": "_home_newmipsmsi_newmips_workspace_92_api_doc_website_main_js",
+    "groupTitle": "_home_newmipsmsi_newmips_workspace_92_api_doc_website_main_js",
+    "name": ""
+  }
+]

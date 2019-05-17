@@ -1,0 +1,90 @@
+<div id="fields" class="dontbreakitplz row">
+    <div data-field="f_type" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_type">
+                {#__ key="entity.e_media.f_type"/}&nbsp;
+                {@inline_help field="f_type"}
+                <i data-field="f_type" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            {^f_type}
+            <input class="form-control input" placeholder='{#__ key="entity.e_media.f_type" /}' name="f_type_print" type="text" readonly="">
+    {/f_type}
+    {#enum_radio.e_media.f_type}
+        {@eq key=f_type value="{.value}" }
+            <input class="form-control input" placeholder='{#__ key="entity.e_media.f_type" /}' name="f_type_print" value="{.translation}" type="text" readonly="">
+        {/eq}
+    {/enum_radio.e_media.f_type}
+</div>
+</div>
+<div data-field="f_name" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_name">
+                {#__ key="entity.e_media.f_name"/}&nbsp;
+                {@inline_help field="f_name"}
+                    <i data-field="f_name" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_media.f_name" /}' name="f_name_print" value="{f_name}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_target_entity" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_target_entity">
+                {#__ key="entity.e_media.f_target_entity"/}&nbsp;
+                {@inline_help field="f_target_entity"}
+                    <i data-field="f_target_entity" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_media.f_target_entity" /}' name="f_target_entity_print" value="{f_target_entity}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+</div><div class="dontbreakitplz">
+{@entityAccess entity="media_mail" }
+<div id="r_media_mail_print" class="row">
+    <div class="col-xs-12">
+        <h3>{@__ key="entity.e_media_mail.name_entity" /}</h3>
+        <hr>
+    </div>
+    <div class="col-xs-12">
+        {#r_media_mail}{>"e_media_mail/print_fields" /}{/r_media_mail}
+    </div>
+</div>
+{/entityAccess}
+</div><div class="dontbreakitplz">
+{@entityAccess entity="media_notification" }
+<div id="r_media_notification_print" class="row">
+    <div class="col-xs-12">
+        <h3>{@__ key="entity.e_media_notification.name_entity" /}</h3>
+        <hr>
+    </div>
+    <div class="col-xs-12">
+        {#r_media_notification}{>"e_media_notification/print_fields" /}{/r_media_notification}
+    </div>
+</div>
+{/entityAccess}
+</div><div class="dontbreakitplz">
+{@entityAccess entity="media_sms" }
+<div id="r_media_sms_print" class="row">
+    <div class="col-xs-12">
+        <h3>{@__ key="entity.e_media_sms.name_entity" /}</h3>
+        <hr>
+    </div>
+    <div class="col-xs-12">
+        {#r_media_sms}{>"e_media_sms/print_fields" /}{/r_media_sms}
+    </div>
+</div>
+{/entityAccess}
+</div><div class="dontbreakitplz">
+{@entityAccess entity="media_task" }
+<div id="r_media_task_print" class="row">
+    <div class="col-xs-12">
+        <h3>{@__ key="entity.e_media_task.name_entity" /}</h3>
+        <hr>
+    </div>
+    <div class="col-xs-12">
+        {#r_media_task}{>"e_media_task/print_fields" /}{/r_media_task}
+    </div>
+</div>
+{/entityAccess}
+</div>

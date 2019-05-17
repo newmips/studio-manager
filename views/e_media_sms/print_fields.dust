@@ -1,0 +1,24 @@
+<div id="fields" class="dontbreakitplz row">
+    <div data-field="f_message" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_message">
+                {#__ key="entity.e_media_sms.f_message"/}&nbsp;
+                {@inline_help field="f_message"}
+                <i data-field="f_message" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <div class="show-textarea">{f_message|s}</div>
+        </div>
+    </div>
+    <div data-field="f_phone_numbers" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_phone_numbers">
+                {#__ key="entity.e_media_sms.f_phone_numbers"/}&nbsp;
+                {@inline_help field="f_phone_numbers"}
+                <i data-field="f_phone_numbers" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_media_sms.f_phone_numbers" /}' name="f_phone_numbers_print" value="{f_phone_numbers}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+</div>

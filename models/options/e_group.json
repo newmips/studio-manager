@@ -1,0 +1,18 @@
+[
+    {
+        "target": "e_user",
+        "relation": "belongsToMany",
+        "foreignKey": "fk_id_e_group",
+        "as": "r_user",
+        "showAs": "user",
+        "through": "1_e_group_e_user",
+        "otherKey": "fk_id_e_user",
+        "structureType": "hasManyPreset",
+        "usingField": [
+            {
+                "value": "f_login",
+                "type": "string"
+            }
+        ]
+    }
+]

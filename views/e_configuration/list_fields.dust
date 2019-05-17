@@ -1,0 +1,77 @@
+<table id="table_e_configuration" data-url="/configuration/datalist" class="dataTable table table-bordered table-striped animated fadeIn" style="display: none;">
+    <thead class="main">
+        <tr class="fields">
+            <th data-field="id" data-col="id">
+                {#__ key="entity.e_configuration.id_entity"/}&nbsp;
+                {#__ key="entity.e_configuration.label_entity"/}
+            </th>
+            <th data-field="f_studio_domain" data-col="f_studio_domain" data-type="string">
+                {#__ key="entity.e_configuration.f_studio_domain"/}
+            </th>
+            <th data-field="f_cloud_domain" data-col="f_cloud_domain" data-type="string">
+                {#__ key="entity.e_configuration.f_cloud_domain"/}
+            </th>
+            <th data-field="f_gitlab_url" data-col="f_gitlab_url" data-type="string">
+                {#__ key="entity.e_configuration.f_gitlab_url"/}
+            </th>
+            <th data-field="f_gitlab_login" data-col="f_gitlab_login" data-type="string">
+                {#__ key="entity.e_configuration.f_gitlab_login"/}
+            </th>
+            <th data-field="f_gitlab_private_token" data-col="f_gitlab_private_token" data-type="string">
+                {#__ key="entity.e_configuration.f_gitlab_private_token"/}
+            </th>
+            <th data-field="f_portainer_api_url" data-col="f_portainer_api_url" data-type="string">
+                {#__ key="entity.e_configuration.f_portainer_api_url"/}
+            </th>
+            <th data-field="f_portainer_login" data-col="f_portainer_login" data-type="string">
+                {#__ key="entity.e_configuration.f_portainer_login"/}
+            </th>
+            <th data-field="f_portainer_password" data-col="f_portainer_password" data-type="string">
+                {#__ key="entity.e_configuration.f_portainer_password"/}
+</th>
+			{#actionAccess entity="configuration" action="read"}
+				<th></th>
+			{/actionAccess}
+			{#actionAccess entity="configuration" action="update"}
+				<th></th>
+			{/actionAccess}
+			{#actionAccess entity="configuration" action="delete"}
+				<th></th>
+			{/actionAccess}
+		</tr>
+    </thead>
+    <thead class="filters">
+    	<tr class="fields">
+    		<th data-field="id" data-col="id">
+				{#__ key="entity.e_configuration.id_entity"/}&nbsp;{#__ key="entity.e_configuration.label_entity"/}
+			</th><th data-field="f_studio_domain" data-col="f_studio_domain" data-type="string">
+{#__ key="entity.e_configuration.f_studio_domain"/}
+</th><th data-field="f_cloud_domain" data-col="f_cloud_domain" data-type="string">
+{#__ key="entity.e_configuration.f_cloud_domain"/}
+</th><th data-field="f_gitlab_url" data-col="f_gitlab_url" data-type="string">
+{#__ key="entity.e_configuration.f_gitlab_url"/}
+</th><th data-field="f_gitlab_login" data-col="f_gitlab_login" data-type="string">
+{#__ key="entity.e_configuration.f_gitlab_login"/}
+</th><th data-field="f_gitlab_private_token" data-col="f_gitlab_private_token" data-type="string">
+{#__ key="entity.e_configuration.f_gitlab_private_token"/}
+</th><th data-field="f_portainer_api_url" data-col="f_portainer_api_url" data-type="string">
+{#__ key="entity.e_configuration.f_portainer_api_url"/}
+</th><th data-field="f_portainer_login" data-col="f_portainer_login" data-type="string">
+{#__ key="entity.e_configuration.f_portainer_login"/}
+</th><th data-field="f_portainer_password" data-col="f_portainer_password" data-type="string">
+{#__ key="entity.e_configuration.f_portainer_password"/}
+</th>
+			{#actionAccess entity="configuration" action="read"}
+				<th></th>
+			{/actionAccess}
+			{#actionAccess entity="configuration" action="update"}
+				<th></th>
+			{/actionAccess}
+			{#actionAccess entity="configuration" action="delete"}
+				<th></th>
+			{/actionAccess}
+    	</tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>

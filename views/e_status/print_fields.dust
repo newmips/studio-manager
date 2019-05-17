@@ -1,0 +1,182 @@
+<div id="fields" class="dontbreakitplz row">
+    <div data-field="f_entity" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_entity">
+                {#__ key="entity.e_status.f_entity"/}&nbsp;
+                {@inline_help field="f_entity"}
+                <i data-field="f_entity" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_status.f_entity" /}' name="f_entity_print" value="{f_entity}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_field" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_field">
+                {#__ key="entity.e_status.f_field"/}&nbsp;
+                {@inline_help field="f_field"}
+                    <i data-field="f_field" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_status.f_field" /}' name="f_field_print" value="{f_field}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_name" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_name">
+                {#__ key="entity.e_status.f_name"/}&nbsp;
+                {@inline_help field="f_name"}
+                    <i data-field="f_name" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_status.f_name" /}' name="f_name_print" value="{f_name}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_color" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_color">
+                {#__ key="entity.e_status.f_color"/}&nbsp;
+                {@inline_help field="f_color"}
+                    <i data-field="f_color" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+    <input class="form-control input" placeholder='{#__ key="entity.e_status.f_color" /}' name="f_color_print" value="{f_color}" type="color" readonly="" disabled="">
+</div>
+</div>
+<div data-field="f_accepted_group" class="fieldLineHeight col-xs-12">
+<div class="form-group">
+     <label for="f_accepted_group">{#__ key="entity.e_status.r_accepted_group" /}</label>
+     <select multiple="" disabled="" readonly="" class="regular-select form-control" name="r_accepted_group" data-source="group" data-using="f_label" width="100%">
+         {#r_accepted_group}
+            <option value="{f_label|string}" selected="">{f_label|string}</option>
+         {/r_accepted_group}
+     </select>
+</div>
+</div>
+<div data-field="f_button_label" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_button_label">
+                {#__ key="entity.e_status.f_button_label"/}&nbsp;
+                {@inline_help field="f_button_label"}
+                    <i data-field="f_button_label" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_status.f_button_label" /}' name="f_button_label_print" value="{f_button_label}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_position" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_position">
+                {#__ key="entity.e_status.f_position"/}&nbsp;
+                {@inline_help field="f_position"}
+                    <i data-field="f_position" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_status.f_position" /}' name="f_position_print" value="{f_position}" type="number" max="2147483648" readonly="">
+</div>
+</div>
+<div data-field="f_default" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_default">
+                {#__ key="entity.e_status.f_default"/}&nbsp;
+                {@inline_help field="f_default"}
+                    <i data-field="f_default" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+    &nbsp;
+<br>
+	{@ifTrue key=f_default}		<input class="form-control input" name="f_default_print" value="{f_default}" type="checkbox" checked="" disabled="">
+	{:else}		<input class="form-control input" name="f_default_print" value="{f_default}" type="checkbox" disabled="">
+	{/ifTrue}</div>
+</div>
+<div data-field="f_comment" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_comment">
+                {#__ key="entity.e_status.f_comment"/}&nbsp;
+                {@inline_help field="f_comment"}
+                    <i data-field="f_comment" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+    &nbsp;
+<br>
+	{@ifTrue key=f_comment}		<input class="form-control input" name="f_comment_print" value="{f_comment}" type="checkbox" checked="" disabled="">
+	{:else}		<input class="form-control input" name="f_comment_print" value="{f_comment}" type="checkbox" disabled="">
+	{/ifTrue}</div>
+</div>
+</div><div class="dontbreakitplz">
+{@entityAccess entity="status" }
+<div id="r_children_print" class="row">
+    <div class="col-xs-12">
+        <h3>{@__ key="entity.e_status.name_entity" /}</h3>
+        <hr>
+    </div>
+    <div class="col-xs-12">
+        {#r_children e_status=r_children}
+        {@eq key=id value=e_status[0].id}
+        {>"e_status/list_fields" associationAlias="r_children" associationForeignKey="" associationFlag="" associationSource="" associationUrl="" for="hasMany" /}
+        {/eq}
+        {:else}
+        {>"e_status/list_fields" /}
+        {/r_children}
+    </div>
+<br>
+</div>
+{/entityAccess}
+</div><div class="dontbreakitplz">
+{@entityAccess entity="translation" }
+<div id="r_translations_print" class="row">
+    <div class="col-xs-12">
+        <h3>{@__ key="entity.e_translation.name_entity" /}</h3>
+        <hr>
+    </div>
+    <div class="col-xs-12">
+        {#r_translations e_translation=r_translations}
+        {@eq key=id value=e_translation[0].id}
+        {>"e_translation/list_fields" associationAlias="r_translations" associationForeignKey="" associationFlag="" associationSource="" associationUrl="" for="hasMany" /}
+        {/eq}
+        {:else}
+        {>"e_translation/list_fields" /}
+        {/r_translations}
+    </div>
+<br>
+</div>
+{/entityAccess}
+</div><div class="dontbreakitplz">
+{@entityAccess entity="action" }
+<div id="r_actions_print" class="row">
+    <div class="col-xs-12">
+        <h3>{@__ key="entity.e_action.name_entity" /}</h3>
+        <hr>
+    </div>
+    <div class="col-xs-12">
+        {#r_actions e_action=r_actions}
+        {@eq key=id value=e_action[0].id}
+        {>"e_action/list_fields" associationAlias="r_actions" associationForeignKey="" associationFlag="" associationSource="" associationUrl="" for="hasMany" /}
+        {/eq}
+        {:else}
+        {>"e_action/list_fields" /}
+        {/r_actions}
+    </div>
+<br>
+</div>
+{/entityAccess}
+</div><div class="dontbreakitplz">
+{@entityAccess entity="history_2756_15144" }
+<div id="r_history_2756_15144_print" class="row">
+    <div class="col-xs-12">
+        <h3>{@__ key="entity.e_history_2756_15144.name_entity" /}</h3>
+        <hr>
+    </div>
+    <div class="col-xs-12">
+        {#r_history_2756_15144 e_history_2756_15144=r_history_2756_15144}
+        {@eq key=id value=e_history_2756_15144[0].id}
+        {>"e_history_2756_15144/list_fields" associationAlias="r_history_2756_15144" associationForeignKey="" associationFlag="" associationSource="" associationUrl="" for="hasMany" /}
+        {/eq}
+        {:else}
+        {>"e_history_2756_15144/list_fields" /}
+        {/r_history_2756_15144}
+    </div>
+<br>
+</div>
+{/entityAccess}
+</div>

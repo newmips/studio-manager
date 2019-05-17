@@ -1,0 +1,563 @@
+{
+    "app": {
+        "name": "Studio Manager"
+    },
+    "notification": {
+        "deleteAll": "Supprimer toutes les notifications",
+        "icon": {
+            "choose": "Choisir une icône"
+        }
+    },
+    "login": {
+        "log_in": "Log in",
+        "reset_password": {
+            "title": "Mot de passe oublié",
+            "success": "Votre mot de passe a bien été reinitialisé.",
+            "successMail": "Un email vous permettant de réinitialiser votre mot de passe vous a bien été envoyé.",
+            "userNotExist": "Erreur, cet utilisateur n'existe pas.",
+            "cannotFindToken": "Erreur, impossible de retrouver votre token de réinitialisation."
+        },
+        "first_connection": {
+            "title": "Première connexion",
+            "success": "Mise à jour effectuée, vous pouvez désormais vous connecter avec vos identifiants.",
+            "success2": "Mise à jour effectuée, vous êtes maintenant connecté(e) !",
+            "userNotExist": "Erreur, cet utilisateur n'existe pas ou a déjà été activé.",
+            "alreadyHavePassword": "Opération impossible, cet utilisateur possède déjà un mot de passe.",
+            "passwordNotMatch": "Désolé, les mots de passe ne correspondent pas. Le mot de passe doit faire minimum 4 caractères."
+        },
+        "authentication": "Connexion",
+        "login": "Login",
+        "password": "Mot de passe",
+        "minimalLength": "(4 caractères minimum)",
+        "confirm_password": "Confirmation du mot de passe",
+        "mail": "Mail",
+        "remember_me": "Se souvenir de moi",
+        "submit": "Soumettre"
+    },
+    "settings": {
+        "title": "Gestion des accès",
+        "tool_menu": "Fichier configuration des accès",
+        "tool_success": "Le fichier de configuration des accès a bien été importé.",
+        "tool_title": "Importer / Exporter la configuration des accès",
+        "tool_export": "Exporter la configuration des accès",
+        "tool_import": "Importer une configuration d'accès",
+        "import_file_name": "Fichier access.json:",
+        "tool_warning": "Attention, le fichier doit etre de la même structure que le access.json actuel ! Sinon l'application ne sera plus utilisable.",
+        "auth_component": {
+            "access_managment": "Gestion des accès par groupe",
+            "action_managment": "Gestion des actions par rôle",
+            "moduleList": "Modules",
+            "entityList": "Entités",
+            "grouplist": "Groupes:",
+            "rolelist": "Rôles:",
+            "entitylist": "Entités:",
+            "group": "Groupe",
+            "role": "Rôle",
+            "api_status": "Statut de l'API",
+            "api_doc": "Documentation de l'API",
+            "action": {
+                "read": "Afficher",
+                "create": "Créer",
+                "update": "Modifier",
+                "delete": "Supprimer"
+            },
+            "no_access_group_module": "Votre groupe n'a pas accès à ce module.",
+            "no_access_group_entity": "Votre groupe n'a pas accès à cette entité.",
+            "no_access_change_status": "Votre groupe n'a pas le droit de changer ce statut.",
+            "no_access_role": "Votre rôle n'a pas accès à cette action sur cette entité."
+        },
+        "db_tool": {
+            "title": "Outil BDD",
+            "export_title": "Export",
+            "import_title": "Import",
+            "export_action": "Exporter",
+            "all_db": "Toute la base de donnée",
+            "import_action": "Importer",
+            "import_file": "Fichier SQL",
+            "import_success": "L'import a bien été effectué.",
+            "import_error": "Une erreur s'est produite, merci de vérifier les logs.",
+            "file_needed": "Merci d'ajouter le fichier d'import.",
+            "wrong_db_pwd": "Mot de passe incorrect.",
+            "modal_password_title": "Confirmation du mot de passe",
+            "modal_password_content": "Merci de confirmer le mot de passe de la base de données:",
+            "wrong_dialect": "Désolé, les outils de base de données ne fonctionne qu'avec MySQL pour le moment.",
+            "no_choice": "Merci de choisir ce que vous souhaitez exporter."
+        },
+        "import_export": {
+            "title": "Import / Export"
+        },
+        "legend": "Modifier vos paramètres",
+        "lang": "Langue",
+        "login": "Login",
+        "email": "Email",
+        "firstname": "Prénom",
+        "lastname": "Nom",
+        "phone": "Téléphone",
+        "old_password": "Votre ancien mot de passe",
+        "new_password_1": "Nouveau mot de passe",
+        "new_password_2": "Confirmer nouveau mot de passe",
+        "error1": "Vous devez renseigner un nouveau mot de passe pour le changer.",
+        "error2": "Les deux mots de passe ne correspondent pas.",
+        "error3": "Votre nouveau mot de passe doit faire au moins 4 caractères.",
+        "error4": "Votre ancien mot de passe n'est pas valide.",
+        "success": "Votre profil a bien été mis à jour."
+    },
+    "navbar": {
+        "about": "A propos",
+        "help": "Aide",
+        "support": "Support"
+    },
+    "select": {
+        "default": "-- Choisir --"
+    },
+    "module": {
+        "home": "Accueil",
+        "module": "Module",
+        "administration": "Administration",
+        "workspace": "Espace de travail",
+        "m_home": "Accueil",
+        "m_administration": "Administration"
+    },
+    "role": {
+        "administrator": "Administrateur",
+        "developer": "Développeur"
+    },
+    "button": {
+        "profile": "Profil",
+        "disconnect": "Se déconnecter",
+        "show": "Afficher",
+        "update": "Modifier",
+        "delete": "Supprimer",
+        "create": "Créer",
+        "list": "Lister",
+        "add": "Ajouter",
+        "remove": "Retirer",
+        "save": "Sauvegarder",
+        "preview": "Prévisualiser",
+        "record": "Enregistrer",
+        "execute": "Exécuter",
+        "settings": "Paramètres",
+        "download": "Télécharger",
+        "search": "Rechercher",
+        "send": "Envoyer",
+        "validation": "Valider",
+        "previous": "Précédent",
+        "next": "Suivant",
+        "close": "Fermer",
+        "generate": "Générer",
+        "help": "Aide",
+        "cancel": "Annuler",
+        "return": "Retour",
+        "delete_confirm": "Êtes-vous sûr de vouloir supprimer cet enregistrement ?",
+        "loading": "Chargement..."
+    },
+    "operation": {
+        "show": "Afficher",
+        "update": "Modifier",
+        "create": "Créer",
+        "delete": "Supprimer",
+        "list": "Lister",
+        "add": "Ajouter"
+    },
+    "message": {
+        "create": {
+            "success": "Succès ! L'enregistrement a été créé en base de données.",
+            "failure": "Erreur ! L'enregistrement n'a pas été créé en base de données. Veuillez contacter votre administrateur."
+        },
+        "update": {
+            "success": "Succès ! L'enregistrement a été modifié en base de données.",
+            "failure": "Erreur ! L'enregistrement n'a pas été modifié en base de données. Veuillez contacter votre administrateur."
+        },
+        "delete": {
+            "success": "Succès ! L'enregistrement a été supprimé en base de données.",
+            "failure": "Erreur ! L'enregistrement n'a pas été supprimé en base de données. Veuillez contacter votre administrateur.",
+            "question": "Êtes-vous sûr de vouloir supprimer cette entité ?"
+        },
+        "empty": "Aucune donnée à afficher",
+        "unique": "Ce champ doit être unique:"
+    },
+    "entity": {
+        "e_user": {
+            "label_entity": "Utilisateur",
+            "name_entity": "Utilisateur",
+            "plural_entity": "Utilisateur",
+            "id_entity": "ID",
+            "f_login": "Identifiant",
+            "f_password": "password",
+            "f_email": "Email",
+            "f_token_password_reset": "token_password_reset",
+            "f_enabled": "enabled",
+            "r_role": "Rôle",
+            "r_group": "Groupe",
+            "r_notification": "notification"
+        },
+        "e_role": {
+            "label_entity": "Rôle",
+            "name_entity": "Rôle",
+            "plural_entity": "Rôle",
+            "id_entity": "ID",
+            "f_label": "Libellé",
+            "r_user": "Utilisateurs"
+        },
+        "e_group": {
+            "label_entity": "Groupe",
+            "name_entity": "Groupe",
+            "plural_entity": "Groupe",
+            "id_entity": "ID",
+            "f_label": "Libellé",
+            "r_user": "Utilisateurs"
+        },
+        "e_api_credentials": {
+            "label_entity": "Identifiant d'API",
+            "name_entity": "Identifiant d'API",
+            "plural_entity": "Identifiant d'API",
+            "id_entity": "ID",
+            "f_client_name": "Nom client",
+            "f_client_key": "Client Key",
+            "f_client_secret": "Client Secret",
+            "f_token": "Token",
+            "f_token_timeout_tmsp": "Token timeout TMSP",
+            "r_role": "Rôle",
+            "r_group": "Groupe"
+        },
+        "e_synchronization": {
+            "label_entity": "Synchronisation",
+            "name_entity": "Synchronisation",
+            "plural_entity": "Synchronisation",
+            "id_entity": "ID",
+            "f_journal_backup_file": "Fichier de sauvegarde de Journal",
+            "r_api_credentials": "Identifiants API"
+        },
+        "e_synchro_credentials": {
+            "label_entity": "Identifiants synchronisation",
+            "name_entity": "Identifiants synchronisation",
+            "plural_entity": "Identifiants synchronisation",
+            "id_entity": "ID",
+            "f_cloud_host": "Cloud host",
+            "f_client_key": "Client key",
+            "f_client_secret": "Client secret"
+        },
+        "e_status": {
+            "label_entity": "Statut",
+            "name_entity": "Statut",
+            "plural_entity": "Statuts",
+            "id_entity": "ID",
+            "f_entity": "Entité",
+            "f_field": "Champ",
+            "f_name": "Nom",
+            "f_color": "Couleur",
+            "r_accepted_group": "Groupes acceptés (Aucun groupe signifie accepté pour tout le monde)",
+            "f_button_label": "Libellé du bouton",
+            "f_position": "Position",
+            "f_default": "Est le statut par défaut",
+            "f_comment": "Commentaire",
+            "r_children": "Children",
+            "r_translations": "Translations",
+            "r_actions": "Actions",
+            "r_history_2756_15144": "history_2756_15144",
+            "as_r_children": "Statuts suivants",
+            "modal_title": "Commentaire",
+            "apply_default": "Appliquer ce statut aux entités sans statut"
+        },
+        "e_translation": {
+            "label_entity": "Traduction",
+            "name_entity": "Traduction",
+            "plural_entity": "Traductions",
+            "id_entity": "ID",
+            "f_language": "Langage",
+            "f_value": "Valeur",
+            "as_r_translations": "Traductions"
+        },
+        "e_media": {
+            "label_entity": "Média",
+            "name_entity": "Média",
+            "plural_entity": "Média",
+            "id_entity": "ID",
+            "f_type": "Type",
+            "f_name": "Nom",
+            "f_target_entity": "Entité ciblé",
+            "r_media_mail": "Media Mail",
+            "r_media_notification": "Media Notification",
+            "r_media_sms": "Media SMS",
+            "r_media_task": "Media Task",
+            "as_r_media": "Média",
+            "f_title": "Titre",
+            "f_description": "Description",
+            "f_icon": "Icône",
+            "f_color": "Couleur"
+        },
+        "e_action": {
+            "label_entity": "Action",
+            "name_entity": "Action",
+            "plural_entity": "Action",
+            "id_entity": "ID",
+            "r_media": "Media",
+            "f_order": "Ordre",
+            "f_execution": "Exécution"
+        },
+        "e_robot": {
+            "label_entity": "Robot",
+            "name_entity": "Robot",
+            "plural_entity": "Robot",
+            "id_entity": "ID",
+            "f_current_status": "Current status",
+            "f_name": "Name",
+            "r_api_credentials": "Api credentials",
+            "f_commentaires": "Commentaires"
+        },
+        "e_task": {
+            "label_entity": "Task",
+            "name_entity": "Task",
+            "plural_entity": "Task",
+            "id_entity": "ID",
+            "r_history_state": "Historique State",
+            "r_state": "State",
+            "s_state": "State",
+            "f_title": "Title",
+            "f_type": "Type",
+            "f_planned_date": "Planned date",
+            "f_execution_start_date": "Execution start date",
+            "f_execution_finish_date": "Execution finish date",
+            "f_duration": "Duration",
+            "f_data_flow": "Data flow",
+            "r_robot": "Robot",
+            "f_program_file": "Program file",
+            "f_procedure": "Procedure"
+        },
+        "e_history_e_task_s_state": {
+            "label_entity": "Historique state task",
+            "name_entity": "Historique state task",
+            "plural_entity": "Historique state task",
+            "id_entity": "ID",
+            "r_state": "State",
+            "f_comment": "Commentaire",
+            "r_modified_by": "Modifié par",
+            "as_r_history_state": "Historique State",
+            "as_r_history_e_task_s_state": "Historique state task"
+        },
+        "e_media_mail": {
+            "label_entity": "Média Mail",
+            "name_entity": "Média Mail",
+            "plural_entity": "Média Mail",
+            "id_entity": "ID",
+            "f_to": "Destinataire",
+            "f_cc": "Cc",
+            "f_cci": "Cci",
+            "f_from": "Expéditeur",
+            "f_subject": "Sujet",
+            "f_content": "Contenu"
+        },
+        "e_media_notification": {
+            "label_entity": "Média Notification",
+            "name_entity": "Média Notification",
+            "plural_entity": "Média Notification",
+            "id_entity": "ID",
+            "f_title": "Titre",
+            "f_description": "Description",
+            "f_icon": "Icône",
+            "f_color": "Couleur",
+            "f_targets": "targets",
+            "as_r_media_notification": "Média Notification",
+            "r_target_groups": "Groupes ciblés",
+            "r_target_users": "Utilisateurs ciblés"
+        },
+        "e_media_sms": {
+            "label_entity": "Média SMS",
+            "name_entity": "Média SMS",
+            "plural_entity": "Média SMS",
+            "id_entity": "ID",
+            "f_message": "Message",
+            "f_phone_numbers": "Phone numbers"
+        },
+        "e_media_task": {
+            "label_entity": "Media Task",
+            "name_entity": "Media Task",
+            "plural_entity": "Media Task",
+            "id_entity": "ID",
+            "f_task_name": "Task name",
+            "f_task_type": "Task type",
+            "f_assignment_logic": "Assignment logic",
+            "f_program_file": "Program file",
+            "f_data_flow": "Data flow",
+            "f_program_type": "Program type"
+        },
+        "e_notification": {
+            "label_entity": "Notification",
+            "name_entity": "Notification",
+            "plural_entity": "Notification",
+            "id_entity": "ID",
+            "f_title": "Titre",
+            "f_description": "Description",
+            "f_url": "URL",
+            "f_color": "Couleur",
+            "f_icon": "Icône",
+            "r_user": "user",
+            "as_r_notification": "Notification"
+        },
+        "e_inline_help": {
+            "label_entity": "Aide en ligne",
+            "name_entity": "Aide en ligne",
+            "plural_entity": "Aides en ligne",
+            "id_entity": "ID",
+            "f_entity": "Entité",
+            "f_field": "Champ",
+            "f_content": "Contenu"
+        },
+        "e_configuration": {
+            "label_entity": "Configuration",
+            "name_entity": "Configuration",
+            "plural_entity": "Configuration",
+            "id_entity": "ID",
+            "f_studio_domain": "Studio Domain",
+            "f_cloud_domain": "Cloud Domain",
+            "f_gitlab_url": "Gitlab URL",
+            "f_gitlab_login": "Gitlab Login",
+            "f_gitlab_private_token": "Gitlab Private Token",
+            "f_portainer_api_url": "Portainer API URL",
+            "f_portainer_login": "Portainer Login",
+            "f_portainer_password": "Portainer Password"
+        },
+        "e_environment": {
+            "label_entity": "Environment",
+            "name_entity": "Environment",
+            "plural_entity": "Environment",
+            "id_entity": "ID",
+            "f_name": "Name",
+            "f_container_ip": "Container IP",
+            "f_database_ip": "Database IP",
+            "f_url": "URL"
+        }
+    },
+    "synchro": {
+        "title": "Synchronisation",
+        "configure": "Configurer données de chargement",
+        "list": "Lister les synchronisations",
+        "config": {
+            "title": "Configuration"
+        },
+        "process": {
+            "title": "Synchronisation",
+            "synchronize": "Synchroniser",
+            "dumped": "Données de chargement généré",
+            "no_credentials": "Aucun identifiant synchro trouvé",
+            "connection_failed": "Impossible de se connecter a l'API"
+        }
+    },
+    "global_component": {
+        "local_file_storage": {
+            "filename": "Nom du fichier",
+            "wait_upload": "Des fichiers sont en cours de téléchargement, merci de bien vouloir patienter.",
+            "required_file": "Des champs fichiers / images sont obligatoires, merci de les renseigner."
+        },
+        "contact_form": {
+            "firstname": "Prénom",
+            "lastname": "Nom",
+            "email": "Email",
+            "title": "Titre",
+            "content": "Contenu"
+        },
+        "agenda": {
+            "menu": "Agenda",
+            "add_event": "Ajouter un événement",
+            "no_category": "Pas de catégorie",
+            "pending_event": "Événement(s) en attente",
+            "startHour": "Heure de début",
+            "endHour": "Heure de fin",
+            "fill_title": "Merci de renseigner un titre d'événement."
+        },
+        "print": {
+            "action": "Imprimer"
+        }
+    },
+    "component": {
+        "c_db_tool": {
+            "label_component": "Outil BDD"
+        },
+        "c_access_tool": {
+            "label_component": "Fichier d'accès"
+        },
+        "c_import_export": {
+            "label_component": "Import / Export"
+        },
+        "c_access_settings_role": {
+            "label_component": "Accès des rôles"
+        },
+        "c_access_settings_group": {
+            "label_component": "Accès des groupes"
+        },
+        "c_access_settings_api": {
+            "label_component": "Accès à l'API"
+        },
+        "c_documents_2756": {
+            "label_component": "Documents",
+            "name_component": "Documents",
+            "plural_component": "Documents"
+        },
+        "status": {
+            "error": {
+                "illegal_status": "Ce statut n'est pas valide.",
+                "action_error": "Une ou plusieurs actions n'ont pas pu être éxecutée. Verifiez que les notifications sont activées et verifiez votre configuration mail."
+            },
+            "next_status": "Statut suivant",
+            "available_status": "Statuts disponibles",
+            "children": "Statuts suivants",
+            "insert_variable": "Inserer une variable...",
+            "choose_from_user": "Sélectionner un utilisateur",
+            "choose_from_group": "Sélectionner un groupe",
+            "choose_from_field": "Sélectionner un champ",
+            "choose_from_phone_field": "Sélectionner un champ de type téléphone",
+            "choose_from_email_field": "Sélectionner un champ de type email",
+            "choose_user_target": "Sélectionner un champ lié à un utilisateur",
+            "notification_targets": "Cibles de la notification",
+            "no_status_field": "Aucune entité ne possède de composant Statut. Vous pouvez utiliser le générateur afin d'en ajouter un et ainsi le configurer ici.",
+            "select_status": "Sélectionner un statut",
+            "diagram_description": "Gissez/Déposez un statut sur un parent dans le diagram pour l'ajouter comme enfant.",
+            "diagram": "Diagram"
+        },
+        "c_synchro": {
+            "label_component": "Synchronisation"
+        }
+    },
+    "defaults": {
+        "widgets": {
+            "lastrecords": {
+                "label": "derniers enregistrements"
+            },
+            "stats": {
+                "more_info": "Plus d'infos"
+            },
+            "piechart": {}
+        },
+        "createdAt": "Date de création"
+    },
+    "error": {
+        "404": {
+            "title": "Nous n’avons pas pu trouver ce que vous souhaitiez.",
+            "title2": "Page introuvable.",
+            "textone": "Le lien que vous avez suivi peut être incorrect ou la page peut avoir été supprimée."
+        },
+        "500": {
+            "title": "Nous sommes désolé, une erreur serveur s'est produite."
+        },
+        "validation": {
+            "number": "La valeur du champ %s doit être un nombre",
+            "radio": "La valeur du champ %s n'est pas valide",
+            "float": "Le champ %s doit être un nombre décimal",
+            "boolean": "La valeur du champ %s doit être vrai ou faux",
+            "email": "Le champ %s n'est pas un email valide",
+            "date": "Le champ %s n'est pas une date valide",
+            "tel": "Le champ %s n'est pas un téléphone valide",
+            "color": "Le champ %s n'est pas une couleur valide",
+            "password": "Le champ %s doit faire entre 3 et 32 caractères",
+            "url": "Le champ %s n'est pas une URL valide"
+        },
+        "title": "Erreur",
+        "contactAdmin": "Merci de contacter votre administrateur.",
+        "meanwhile": "Entre temps, vous pouvez ",
+        "goHome": "Si vous souhaitez retourner à la page d'accueil, cliquez-ici",
+        "goBack": "Si vous souhaitez revenir en arrière, cliquez-ici",
+        "goBackText": "Revenir en arrière",
+        "home": "Accueil",
+        "valueTooLong": "La valeur renseignée dépasse la longueur maximum autorisée(>30)."
+    }
+}

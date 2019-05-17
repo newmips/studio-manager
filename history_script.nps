@@ -1,0 +1,29 @@
+add entity Configuration
+add title Global
+add field Studio Domain
+add field Cloud Domain
+add title Gitlab
+add field Gitlab URL
+add field Gitlab Login
+add field Gitlab Private Token
+add title Portainer
+add field Portainer API URL
+add field Portainer Login
+add field Portainer Password
+add entity Environment
+add field Name
+add field Container IP
+add field Database IP
+
+// --- End of the script --- //
+
+
+select entity Environment
+add field URL with type url
+set logo logo_LOGO-NEWMIPS-01.png
+set theme black
+set logo logo_logo_newmips.png
+list theme
+set theme grey
+set theme grey-light
+set theme grey

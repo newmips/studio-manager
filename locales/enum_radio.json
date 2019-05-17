@@ -1,0 +1,134 @@
+{
+    "e_media": {
+        "f_type": [
+            {
+                "value": "mail",
+                "translations": {
+                    "fr-FR": "Mail",
+                    "en-EN": "Mail"
+                }
+            },
+            {
+                "value": "notification",
+                "translations": {
+                    "fr-FR": "Notification",
+                    "en-EN": "Notification"
+                }
+            },
+            {
+                "value": "sms",
+                "translations": {
+                    "fr-FR": "SMS",
+                    "en-EN": "SMS"
+                }
+            },
+            {
+                "value": "task",
+                "translations": {
+                    "fr-FR": "Task",
+                    "en-EN": "Task"
+                }
+            }
+        ]
+    },
+    "e_action": {
+        "f_execution": [
+            {
+                "value": "immediate",
+                "translations": {
+                    "fr-FR": "Immédiate",
+                    "en-EN": "Immédiate"
+                }
+            },
+            {
+                "value": "differee",
+                "translations": {
+                    "fr-FR": "Différée",
+                    "en-EN": "Différée"
+                }
+            }
+        ]
+    },
+    "e_robot": {
+        "f_current_status": [
+            {
+                "value": "connected",
+                "translations": {
+                    "fr-FR": "CONNECTED",
+                    "en-EN": "CONNECTED"
+                }
+            },
+            {
+                "value": "disconnected",
+                "translations": {
+                    "fr-FR": "DISCONNECTED",
+                    "en-EN": "DISCONNECTED"
+                }
+            },
+            {
+                "value": "working",
+                "translations": {
+                    "fr-FR": "WORKING",
+                    "en-EN": "WORKING"
+                }
+            }
+        ]
+    },
+    "e_task": {
+        "f_type": [
+            {
+                "value": "manual",
+                "translations": {
+                    "fr-FR": "Manual",
+                    "en-EN": "Manual"
+                }
+            },
+            {
+                "value": "automatic",
+                "translations": {
+                    "fr-FR": "Automatic",
+                    "en-EN": "Automatic"
+                }
+            }
+        ]
+    },
+    "e_media_task": {
+        "f_program_type": [
+            {
+                "value": "acs",
+                "translations": {
+                    "fr-FR": "ACS",
+                    "en-EN": "ACS"
+                }
+            },
+            {
+                "value": "hospital",
+                "translations": {
+                    "fr-FR": "Hospital",
+                    "en-EN": "Hospital"
+                }
+            },
+            {
+                "value": "essentiel",
+                "translations": {
+                    "fr-FR": "Essentiel",
+                    "en-EN": "Essentiel"
+                }
+            },
+            {
+                "value": "etoffee",
+                "translations": {
+                    "fr-FR": "Etoffée",
+                    "en-EN": "Etoffée"
+                }
+            },
+            {
+                "value": "specifique",
+                "translations": {
+                    "fr-FR": "Spécifique",
+                    "en-EN": "Spécifique"
+                }
+            }
+        ]
+    }
+}

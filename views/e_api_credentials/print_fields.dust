@@ -1,0 +1,77 @@
+<div id="fields" class="dontbreakitplz row">
+    <div data-field="f_client_name" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_client_name">
+                {#__ key="entity.e_api_credentials.f_client_name"/}&nbsp;
+                {@inline_help field="f_client_name"}
+                <i data-field="f_client_name" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_api_credentials.f_client_name" /}' name="f_client_name_print" value="{f_client_name}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_client_key" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_client_key">
+                {#__ key="entity.e_api_credentials.f_client_key"/}&nbsp;
+                {@inline_help field="f_client_key"}
+                    <i data-field="f_client_key" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_api_credentials.f_client_key" /}' name="f_client_key_print" value="{f_client_key}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_client_secret" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_client_secret">
+                {#__ key="entity.e_api_credentials.f_client_secret"/}&nbsp;
+                {@inline_help field="f_client_secret"}
+                    <i data-field="f_client_secret" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_api_credentials.f_client_secret" /}' name="f_client_secret_print" value="{f_client_secret}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_token" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_token">
+                {#__ key="entity.e_api_credentials.f_token"/}&nbsp;
+                {@inline_help field="f_token"}
+                    <i data-field="f_token" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_api_credentials.f_token" /}' name="f_token_print" value="{f_token}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_token_timeout_tmsp" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_token_timeout_tmsp">
+                {#__ key="entity.e_api_credentials.f_token_timeout_tmsp"/}&nbsp;
+                {@inline_help field="f_token_timeout_tmsp"}
+                    <i data-field="f_token_timeout_tmsp" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_api_credentials.f_token_timeout_tmsp" /}' name="f_token_timeout_tmsp_print" value="{f_token_timeout_tmsp}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_role" class="fieldLineHeight col-xs-12">
+<div class="form-group">
+     <label for="f_role">{#__ key="entity.e_api_credentials.r_role" /}</label>
+     <select multiple="" disabled="" readonly="" class="regular-select form-control" name="r_role" data-source="role" data-using="f_label" width="100%">
+         {#r_role}
+            <option value="{f_label|string}" selected="">{f_label|string}</option>
+         {/r_role}
+     </select>
+</div>
+</div>
+<div data-field="f_group" class="fieldLineHeight col-xs-12">
+<div class="form-group">
+     <label for="f_group">{#__ key="entity.e_api_credentials.r_group" /}</label>
+     <select multiple="" disabled="" readonly="" class="regular-select form-control" name="r_group" data-source="group" data-using="f_label" width="100%">
+         {#r_group}
+            <option value="{f_label|string}" selected="">{f_label|string}</option>
+         {/r_group}
+     </select>
+</div>
+</div>
+</div>

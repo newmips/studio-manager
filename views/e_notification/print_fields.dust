@@ -1,0 +1,76 @@
+<div id="fields" class="dontbreakitplz row">
+    <div data-field="f_title" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_title">
+                {#__ key="entity.e_notification.f_title"/}&nbsp;
+                {@inline_help field="f_title"}
+                <i data-field="f_title" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_notification.f_title" /}' name="f_title_print" value="{f_title}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_description" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_description">
+                {#__ key="entity.e_notification.f_description"/}&nbsp;
+                {@inline_help field="f_description"}
+                    <i data-field="f_description" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_notification.f_description" /}' name="f_description_print" value="{f_description}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_url" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_url">
+                {#__ key="entity.e_notification.f_url"/}&nbsp;
+                {@inline_help field="f_url"}
+                    <i data-field="f_url" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_notification.f_url" /}' name="f_url_print" value="{f_url}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_color" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_color">
+                {#__ key="entity.e_notification.f_color"/}&nbsp;
+                {@inline_help field="f_color"}
+                    <i data-field="f_color" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+    <input class="form-control input" placeholder='{#__ key="entity.e_notification.f_color" /}' name="f_color_print" value="{f_color}" type="color" readonly="" disabled="">
+</div>
+</div>
+<div data-field="f_icon" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_icon">
+                {#__ key="entity.e_notification.f_icon"/}&nbsp;
+                {@inline_help field="f_icon"}
+                    <i data-field="f_icon" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_notification.f_icon" /}' name="f_icon_print" value="{f_icon}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+</div><div class="dontbreakitplz">
+{@entityAccess entity="user" }
+<div id="r_user_print" class="row">
+    <div class="col-xs-12">
+        <h3>{@__ key="entity.e_user.name_entity" /}</h3>
+        <hr>
+    </div>
+    <div class="col-xs-12">
+        {#r_user e_user=r_user}
+        {@eq key=id value=e_user[0].id}
+        {>"e_user/list_fields" associationAlias="r_user" associationForeignKey="" associationFlag="" associationSource="" associationUrl="" for="hasMany" /}
+        {/eq}
+        {:else}
+        {>"e_user/list_fields" /}
+        {/r_user}
+    </div>
+<br>
+</div>
+{/entityAccess}
+</div>

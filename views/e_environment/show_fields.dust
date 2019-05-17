@@ -1,0 +1,80 @@
+<div id="fields" class="row">
+    <div data-field="f_name" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_name">
+                {#__ key="entity.e_environment.f_name"/}&nbsp;
+                {@inline_help field="f_name"}
+                <i data-field="f_name" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_environment.f_name" /}' name="f_name" value="{f_name}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_container_ip" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_container_ip">
+                {#__ key="entity.e_environment.f_container_ip"/}&nbsp;
+                {@inline_help field="f_container_ip"}
+                    <i data-field="f_container_ip" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_environment.f_container_ip" /}' name="f_container_ip" value="{f_container_ip}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_database_ip" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_database_ip">
+                {#__ key="entity.e_environment.f_database_ip"/}&nbsp;
+                {@inline_help field="f_database_ip"}
+                    <i data-field="f_database_ip" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_environment.f_database_ip" /}' name="f_database_ip" value="{f_database_ip}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_url" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_url">
+                {#__ key="entity.e_environment.f_url"/}&nbsp;
+                {@inline_help field="f_url"}
+                    <i data-field="f_url" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+    <br><a href="{f_url}" target="_blank" type="url" data-type="url" style="display: table-cell;padding-right: 5px;">{f_url}</a>
+    {?f_url}    <div class="copy-button">
+        <i class="fa fa-copy"></i>
+    </div>
+    {/f_url}</div>
+</div>
+</div>
+<div class="actions">
+    <form action="/environment/delete" method="post">
+        <div class="quicklinks">
+            <a class="btn btn-default" href="javascript:history.back();"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;{#__ key="button.return"/}</a>
+            {#actionAccess entity="environment" action="delete"}
+                <button class="btn btn-danger btn-confirm">
+                    <i class="fa fa-trash-o fa-md">&nbsp;&nbsp;</i>
+                    <span>{#__ key="button.delete"/}</span>
+                </button>
+                <input name="id" type="hidden" value="{e_environment.id}" class="form-control">
+            {/actionAccess}
+            {#actionAccess entity="environment" action="update"}
+                <a href="/environment/update_form?id={e_environment.id}" class="btn btn-warning">
+                    <i class="fa fa-pencil fa-md">&nbsp;&nbsp;</i><span>{#__ key="button.update"/}</span>
+                </a>
+            {/actionAccess}
+            {^hideButton}
+            {#actionAccess entity="environment" action="create"}
+                <a href="/environment/create_form" class="btn btn-success">
+                    <i class="fa fa-plus fa-md">&nbsp;&nbsp;</i><span>{#__ key="button.create"/}</span>
+                </a>
+            {/actionAccess}
+            {#actionAccess entity="environment" action="read"}
+                <a href="/environment/list" type="submit" class="btn btn-primary">
+                    <i class="fa fa-list fa-md">&nbsp;&nbsp;</i><span>{#__ key="button.list"/}</span>
+                </a>
+            {/actionAccess}
+            {/hideButton}
+        </div>
+    </form>
+</div>

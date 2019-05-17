@@ -1,0 +1,57 @@
+<div id="fields" class="row">
+    <div data-field="f_state" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="r_state">
+                {#__ key="entity.e_history_2756_15144.r_state"/} </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_history_2756_15144.r_state" /}' name="r_state" value="{r_state.f_name|string} - {r_state.f_color|color}" type="text" readonly="">
+</div>
+</div>
+<div data-field="f_comment" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_comment">
+                {#__ key="entity.e_history_2756_15144.f_comment"/}&nbsp;
+                {@inline_help field="f_comment"}
+                    <i data-field="f_comment" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+    <div class="show-textarea">{f_comment|s}</div>
+</div>
+</div>
+<div data-field="f_modified_by" class="fieldLineHeight col-xs-12">
+<div class="form-group">
+    <label for="r_modified_by"> {#__ key="entity.e_history_2756_15144.r_modified_by"/} </label>
+    <input class="form-control input" placeholder='{#__ key="entity.e_history_2756_15144.r_modified_by" /}' name="r_modified_by" value="{r_modified_by.f_login|string}" type="text" readonly="">
+</div>
+</div>
+</div>
+<div class="actions">
+    <form action="/history_2756_15144/delete" method="post">
+        <div class="quicklinks">
+            <a class="btn btn-default" href="javascript:history.back();"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;{#__ key="button.return"/}</a>
+            {#actionAccess entity="history_2756_15144" action="delete"}
+                <button class="btn btn-danger btn-confirm">
+                    <i class="fa fa-trash-o fa-md">&nbsp;&nbsp;</i>
+                    <span>{#__ key="button.delete"/}</span>
+                </button>
+                <input name="id" type="hidden" value="{e_history_2756_15144.id}" class="form-control">
+            {/actionAccess}
+            {#actionAccess entity="history_2756_15144" action="update"}
+                <a href="/history_2756_15144/update_form?id={e_history_2756_15144.id}" class="btn btn-warning">
+                    <i class="fa fa-pencil fa-md">&nbsp;&nbsp;</i><span>{#__ key="button.update"/}</span>
+                </a>
+            {/actionAccess}
+            {^hideButton}
+            {#actionAccess entity="history_2756_15144" action="create"}
+                <a href="/history_2756_15144/create_form" class="btn btn-success">
+                    <i class="fa fa-plus fa-md">&nbsp;&nbsp;</i><span>{#__ key="button.create"/}</span>
+                </a>
+            {/actionAccess}
+            {#actionAccess entity="history_2756_15144" action="read"}
+                <a href="/history_2756_15144/list" type="submit" class="btn btn-primary">
+                    <i class="fa fa-list fa-md">&nbsp;&nbsp;</i><span>{#__ key="button.list"/}</span>
+                </a>
+            {/actionAccess}
+            {/hideButton}
+        </div>
+    </form>
+</div>

@@ -1,0 +1,38 @@
+<div id="fields" class="dontbreakitplz row">
+    <div data-field="f_media" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="r_media">
+                {#__ key="entity.e_action.r_media"/} </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_action.r_media" /}' name="r_media" value="{r_media.f_name|string}" type="text" readonly="">
+</div>
+</div>
+<div data-field="f_order" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_order">
+                {#__ key="entity.e_action.f_order"/}&nbsp;
+                {@inline_help field="f_order"}
+                    <i data-field="f_order" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_action.f_order" /}' name="f_order_print" value="{f_order}" type="number" max="2147483648" readonly="">
+</div>
+</div>
+<div data-field="f_execution" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_execution">
+                {#__ key="entity.e_action.f_execution"/}&nbsp;
+                {@inline_help field="f_execution"}
+                    <i data-field="f_execution" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+    {^f_execution}
+        <input class="form-control input" placeholder='{#__ key="entity.e_action.f_execution" /}' name="f_execution_print" type="text" readonly="">
+    {/f_execution}
+    {#enum_radio.e_action.f_execution}
+        {@eq key=f_execution value="{.value}" }
+            <input class="form-control input" placeholder='{#__ key="entity.e_action.f_execution" /}' name="f_execution_print" value="{.translation}" type="text" readonly="">
+        {/eq}
+    {/enum_radio.e_action.f_execution}
+</div>
+</div>
+</div>

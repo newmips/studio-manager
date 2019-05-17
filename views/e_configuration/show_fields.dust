@@ -1,0 +1,127 @@
+<div id="fields" class="row">
+    <div class="col-xs-12 text-center">
+        <div class="form-group form-title">
+            <h3>Global</h3>
+        </div>
+    </div>
+    <div data-field="f_studio_domain" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_studio_domain">
+                {#__ key="entity.e_configuration.f_studio_domain"/}&nbsp;
+                {@inline_help field="f_studio_domain"}
+                <i data-field="f_studio_domain" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_configuration.f_studio_domain" /}' name="f_studio_domain" value="{f_studio_domain}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_cloud_domain" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_cloud_domain">
+                {#__ key="entity.e_configuration.f_cloud_domain"/}&nbsp;
+                {@inline_help field="f_cloud_domain"}
+                    <i data-field="f_cloud_domain" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_configuration.f_cloud_domain" /}' name="f_cloud_domain" value="{f_cloud_domain}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div class="col-xs-12 text-center"><div class="form-group form-title"><h3>Gitlab</h3></div></div><div data-field="f_gitlab_url" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_gitlab_url">
+                {#__ key="entity.e_configuration.f_gitlab_url"/}&nbsp;
+                {@inline_help field="f_gitlab_url"}
+                    <i data-field="f_gitlab_url" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_configuration.f_gitlab_url" /}' name="f_gitlab_url" value="{f_gitlab_url}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_gitlab_login" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_gitlab_login">
+                {#__ key="entity.e_configuration.f_gitlab_login"/}&nbsp;
+                {@inline_help field="f_gitlab_login"}
+                    <i data-field="f_gitlab_login" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_configuration.f_gitlab_login" /}' name="f_gitlab_login" value="{f_gitlab_login}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_gitlab_private_token" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_gitlab_private_token">
+                {#__ key="entity.e_configuration.f_gitlab_private_token"/}&nbsp;
+                {@inline_help field="f_gitlab_private_token"}
+                    <i data-field="f_gitlab_private_token" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_configuration.f_gitlab_private_token" /}' name="f_gitlab_private_token" value="{f_gitlab_private_token}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div class="col-xs-12 text-center"><div class="form-group form-title"><h3>Portainer</h3></div></div><div data-field="f_portainer_api_url" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_portainer_api_url">
+                {#__ key="entity.e_configuration.f_portainer_api_url"/}&nbsp;
+                {@inline_help field="f_portainer_api_url"}
+                    <i data-field="f_portainer_api_url" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_configuration.f_portainer_api_url" /}' name="f_portainer_api_url" value="{f_portainer_api_url}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_portainer_login" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_portainer_login">
+                {#__ key="entity.e_configuration.f_portainer_login"/}&nbsp;
+                {@inline_help field="f_portainer_login"}
+                    <i data-field="f_portainer_login" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_configuration.f_portainer_login" /}' name="f_portainer_login" value="{f_portainer_login}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_portainer_password" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_portainer_password">
+                {#__ key="entity.e_configuration.f_portainer_password"/}&nbsp;
+                {@inline_help field="f_portainer_password"}
+                    <i data-field="f_portainer_password" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_configuration.f_portainer_password" /}' name="f_portainer_password" value="{f_portainer_password}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+</div>
+<div class="actions">
+    <form action="/configuration/delete" method="post">
+        <div class="quicklinks">
+            <a class="btn btn-default" href="javascript:history.back();"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;
+                {#__ key="button.return"/}</a>
+            {#actionAccess entity="configuration" action="delete"}
+            <button class="btn btn-danger btn-confirm">
+                <i class="fa fa-trash-o fa-md">&nbsp;&nbsp;</i>
+                <span>{#__ key="button.delete"/}</span>
+            </button>
+            <input name="id" type="hidden" value="{e_configuration.id}" class="form-control">
+            {/actionAccess}
+            {#actionAccess entity="configuration" action="update"}
+            <a href="/configuration/update_form?id={e_configuration.id}" class="btn btn-warning">
+                <i class="fa fa-pencil fa-md">&nbsp;&nbsp;</i><span>{#__ key="button.update"/}</span>
+            </a>
+            {/actionAccess}
+            {^hideButton}
+            {#actionAccess entity="configuration" action="create"}
+            <a href="/configuration/create_form" class="btn btn-success">
+                <i class="fa fa-plus fa-md">&nbsp;&nbsp;</i><span>{#__ key="button.create"/}</span>
+            </a>
+            {/actionAccess}
+            {#actionAccess entity="configuration" action="read"}
+            <a href="/configuration/list" type="submit" class="btn btn-primary">
+                <i class="fa fa-list fa-md">&nbsp;&nbsp;</i><span>{#__ key="button.list"/}</span>
+            </a>
+            {/actionAccess}
+            {/hideButton}
+        </div>
+    </form>
+</div>

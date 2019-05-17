@@ -1,0 +1,48 @@
+<div id="fields" class="dontbreakitplz row">
+    <div data-field="f_current_status" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_current_status">
+                {#__ key="entity.e_robot.f_current_status"/}&nbsp;
+                {@inline_help field="f_current_status"}
+                <i data-field="f_current_status" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            {^f_current_status}
+            <input class="form-control input" placeholder='{#__ key="entity.e_robot.f_current_status" /}' name="f_current_status_print" type="text" readonly="">
+    {/f_current_status}
+    {#enum_radio.e_robot.f_current_status}
+        {@eq key=f_current_status value="{.value}" }
+            <input class="form-control input" placeholder='{#__ key="entity.e_robot.f_current_status" /}' name="f_current_status_print" value="{.translation}" type="text" readonly="">
+        {/eq}
+    {/enum_radio.e_robot.f_current_status}
+</div>
+</div>
+<div data-field="f_name" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_name">
+                {#__ key="entity.e_robot.f_name"/}&nbsp;
+                {@inline_help field="f_name"}
+                    <i data-field="f_name" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_robot.f_name" /}' name="f_name_print" value="{f_name}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_api_credentials" class="fieldLineHeight col-xs-12">
+<div class="form-group">
+    <label for="r_api_credentials"> {#__ key="entity.e_robot.r_api_credentials"/} </label>
+    <input class="form-control input" placeholder='{#__ key="entity.e_robot.r_api_credentials" /}' name="r_api_credentials" value="{r_api_credentials.f_client_name|string}" type="text" readonly="">
+</div>
+</div>
+<div data-field="f_commentaires" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_commentaires">
+                {#__ key="entity.e_robot.f_commentaires"/}&nbsp;
+                {@inline_help field="f_commentaires"}
+                    <i data-field="f_commentaires" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+    <textarea readonly="readonly" class="show-textarea regular-textarea">{f_commentaires|s}</textarea>
+</div>
+</div>
+</div>

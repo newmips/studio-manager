@@ -1,0 +1,49 @@
+<div id="fields" class="dontbreakitplz row">
+    <div data-field="f_name" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_name">
+                {#__ key="entity.e_environment.f_name"/}&nbsp;
+                {@inline_help field="f_name"}
+                <i data-field="f_name" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_environment.f_name" /}' name="f_name_print" value="{f_name}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_container_ip" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_container_ip">
+                {#__ key="entity.e_environment.f_container_ip"/}&nbsp;
+                {@inline_help field="f_container_ip"}
+                    <i data-field="f_container_ip" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_environment.f_container_ip" /}' name="f_container_ip_print" value="{f_container_ip}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_database_ip" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_database_ip">
+                {#__ key="entity.e_environment.f_database_ip"/}&nbsp;
+                {@inline_help field="f_database_ip"}
+                    <i data-field="f_database_ip" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_environment.f_database_ip" /}' name="f_database_ip_print" value="{f_database_ip}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_url" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_url">
+                {#__ key="entity.e_environment.f_url"/}&nbsp;
+                {@inline_help field="f_url"}
+                    <i data-field="f_url" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+    <br><a href="{f_url}" target="_blank" type="url" data-type="url" style="display: table-cell;padding-right: 5px;">{f_url}</a>
+    {?f_url}    <div class="copy-button">
+        <i class="fa fa-copy"></i>
+    </div>
+    {/f_url}</div>
+</div>
+</div>

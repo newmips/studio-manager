@@ -1,0 +1,39 @@
+<div id="fields" class="dontbreakitplz row">
+    <div data-field="f_cloud_host" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_cloud_host">
+                {#__ key="entity.e_synchro_credentials.f_cloud_host"/}&nbsp;
+                {@inline_help field="f_cloud_host"}
+                <i data-field="f_cloud_host" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <br><a href="{f_cloud_host}" target="_blank" type="url" data-type="url" style="display: table-cell;padding-right: 5px;">{f_cloud_host}</a>
+            {?f_cloud_host} <div class="copy-button">
+                <i class="fa fa-copy"></i>
+            </div>
+            {/f_cloud_host}
+        </div>
+    </div>
+    <div data-field="f_client_key" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_client_key">
+                {#__ key="entity.e_synchro_credentials.f_client_key"/}&nbsp;
+                {@inline_help field="f_client_key"}
+                <i data-field="f_client_key" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+            <input class="form-control input" placeholder='{#__ key="entity.e_synchro_credentials.f_client_key" /}' name="f_client_key_print" value="{f_client_key}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+<div data-field="f_client_secret" class="fieldLineHeight col-xs-12">
+    <div class="form-group">
+        <label for="f_client_secret">
+                {#__ key="entity.e_synchro_credentials.f_client_secret"/}&nbsp;
+                {@inline_help field="f_client_secret"}
+                    <i data-field="f_client_secret" class="inline-help fa fa-info-circle" style="color: #1085EE"></i>
+                {/inline_help}
+            </label>
+	<input class="form-control input" placeholder='{#__ key="entity.e_synchro_credentials.f_client_secret" /}' name="f_client_secret_print" value="{f_client_secret}" type="text" maxlength="255" readonly="">
+</div>
+</div>
+</div>
