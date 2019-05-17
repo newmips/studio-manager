@@ -188,20 +188,26 @@ exports.deleteStack = async (stackName) => {
         json: true
     });
 
+    let promises = [];
+
     // Deleting linked volumes
-    for (var i = 0; i < allVolumes.length; i++) {
-        if(allVolumes[i].Name.indexOf(stackName + "_workspace") != -1 || allVolumes[i].Name.indexOf(stackName + "_database")){
-            await request({
-                uri: conf.f_portainer_api_url + "/endpoints/1/docker/volumes/"+allVolumes[i].Name,
+    let volume;
+    for (var i = 0; i < allVolumes.Volumes.length; i++) {
+        volume = allVolumes.Volumes[i];
+        if(volume.Name.indexOf(stackName + "_workspace") != -1 || volume.Name.indexOf(stackName + "_database") != -1){
+            promises.push(request({
+                uri: conf.f_portainer_api_url + "/endpoints/1/docker/volumes/"+volume.Name,
                 method: "DELETE",
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'Authorization': token
                 },
                 json: true
-            });
+            }));
         }
     }
+
+    await Promise.all(promises);
 
     return ;
 }
