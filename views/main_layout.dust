@@ -20,7 +20,7 @@
         {! Admin LTE style !}
         <link href="/css/AdminLteV2/AdminLTE.css" rel="stylesheet" type="text/css">
         {! Admin LTE Theme !}
-        <link href="/themes/grey/css/style.css" rel="stylesheet" type="text/css" data-type="theme" data-theme="grey">
+        <link href="/themes/black-light/css/style.css" rel="stylesheet" type="text/css" data-type="theme" data-theme="black-light">
         {! Toastr !}
         <link href="/css/toastr/toastr.min.css" rel="stylesheet" type="text/css">
         {! Bootstrap Datepicker !}
@@ -181,7 +181,7 @@
                 <section class="sidebar">
                     {! Sidebar user panel !}
                     <div class="user-panel" style="text-align:center;">
-                        <div class="pull-center image"><a href="/"><img src="/img/logo/logo_logo_newmips.png" alt="Logo"></a><a href="/"></a>
+                        <div class="pull-center image"><a href="/"><img src="/img/logo_newmips.png" alt="Logo"></a><a href="/"></a>
                             {! *** #logo *** !}
                             {! Navigation between modules !}
                             <div class="sidebar-form">

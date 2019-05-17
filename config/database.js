@@ -4,9 +4,9 @@ var databaseConf = {
     develop: {
         host: '127.0.0.1',
         port: '3306', //mysql: 3306 - postgres: 5432
-        user: 'newmips',
-        password: 'newmips',
-        database: 'newmips',
+        user: 'root',
+        password: '2653',
+        database: 'studio-manager',
         dialect: 'mysql'  //mysql or postgres
     },
     recette: {
@@ -14,7 +14,7 @@ var databaseConf = {
         port: '3306',
         user: 'newmips',
         password: 'newmips',
-        database: 'newmips',
+        database: 'studio-manager',
         dialect: 'mysql'
     },
     production: {
@@ -22,7 +22,7 @@ var databaseConf = {
         port: '3306',
         user: 'newmips',
         password: 'newmips',
-        database: 'newmips',
+        database: 'studio-manager',
         dialect: 'mysql'
     },
     tablet: {
@@ -37,7 +37,7 @@ var databaseConf = {
         port: '3306',
         user: 'newmips',
         password: 'newmips',
-        database: 'newmips',
+        database: 'studio-manager',
         dialect: 'mysql'
     },
     cloud: {
@@ -45,7 +45,7 @@ var databaseConf = {
         port: '3306',
         user: 'newmips',
         password: 'newmips',
-        database: 'newmips',
+        database: 'studio-manager',
         dialect: 'mysql'
     }
 }
