@@ -219,7 +219,7 @@ router.post('/create', block_access.actionAccessMiddleware("environment", "creat
         var createObject = model_builder.buildForRoute(attributes, options, req.body);
 
         models.E_environment.create(createObject).then(function(e_environment) {
-            var redirect = '/environment/show?id=' + e_environment.id;
+            var redirect = '/environment/list';
             req.session.toastr = [{
                 message: 'message.create.success',
                 level: "success"
