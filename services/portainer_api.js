@@ -57,7 +57,8 @@ exports.generateStack = async (stackName, containerIP, databaseIP) => {
                     "GITLAB_HOME": conf.f_gitlab_url,
                     "GITLAB_LOGIN": conf.f_gitlab_login,
                     "GITLAB_PRIVATE_TOKEN": conf.f_gitlab_private_token,
-                    "SERVER_IP": containerIP
+                    "SERVER_IP": containerIP,
+                    "DATABASE_IP": databaseIP
                 },
                 "labels": [
                     "traefik.enable=true",
