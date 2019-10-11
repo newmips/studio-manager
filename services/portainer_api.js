@@ -2,7 +2,7 @@ const request = require('request-promise');
 const json2yaml = require('json2yaml');
 const models = require('../models/')
 
-exports.generateStack = async (stackName, containerIP, databaseIP) => {
+exports.generateStack = async (stackName, containerIP, databaseIP, image) => {
 
     console.log("generateStack");
 
@@ -38,7 +38,7 @@ exports.generateStack = async (stackName, containerIP, databaseIP) => {
                 "links": [
                     "database"
                 ],
-                "image": "dockside/newmips:latest",
+                "image": "dockside/"+image,
                 "networks": {
                     "proxy": {
                         "ipv4_address": containerIP
@@ -125,6 +125,46 @@ exports.generateStack = async (stackName, containerIP, databaseIP) => {
 
     // Return generated stack
     return generateCall;
+}
+
+exports.getAvailabeImages = async (stackName, containerIP, databaseIP) => {
+
+    console.log("getAvailabeImages");
+
+    let conf = await models.E_configuration.findOne({
+        where: {
+            id: 1
+        }
+    });
+
+    let callResults = await request({
+        uri: conf.f_portainer_api_url + "/auth",
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: {
+            Username: conf.f_portainer_login,
+            Password: conf.f_portainer_password
+        },
+        json: true // Automatically stringifies the body to JSON
+    });
+
+    // Full token
+    let token = "Bearer "+ callResults.jwt;
+
+    let allImages = await request({
+        uri: conf.f_portainer_api_url + "/endpoints/1/docker/images/json",
+        method: "GET",
+        headers: {
+            'Content-Type': 'multipart/form-data',
+            'Authorization': token
+        },
+        json: true
+    });
+
+    let newmipsImages = allImages.filter(x => x.RepoTags[0].indexOf('dockside/newmips') != -1).map(x => x.RepoTags[0].replace('dockside/', ''));
+    return newmipsImages;
 }
 
 exports.deleteStack = async (stackName) => {

@@ -32,4 +32,16 @@
             <input class="form-control input" placeholder='{#__ key="entity.e_environment.f_database_ip" /}' name="f_database_ip" value="{databaseIP}" type="text" maxlength="255">
         </div>
     </div>
+    <div data-field="f_image" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_image">
+                Images
+            </label>
+            <select class="form-control input" name="f_image">
+                {#allImages}
+                    <option value='{.}'>{.}</option>
+                {/allImages}
+            </select>
+        </div>
+    </div>
 </div>
