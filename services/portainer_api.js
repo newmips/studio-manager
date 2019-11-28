@@ -2,7 +2,7 @@ const request = require('request-promise');
 const json2yaml = require('json2yaml');
 const models = require('../models/')
 
-exports.generateStack = async (stackName, containerIP, databaseIP, image) => {
+exports.generateStack = async (stackName, containerIP, databaseIP, image, dbImage) => {
 
     console.log("generateStack");
 
@@ -67,7 +67,7 @@ exports.generateStack = async (stackName, containerIP, databaseIP, image) => {
                 ]
             },
             "database": {
-                "image": "dockside/newmips-mysql:latest",
+                "image": "dockside/"+dbImage,
                 "networks": {
                     "proxy": {
                         "ipv4_address": databaseIP
@@ -81,7 +81,12 @@ exports.generateStack = async (stackName, containerIP, databaseIP, image) => {
                     "MYSQL_DATABASE": "newmips",
                     "MYSQL_USER": "newmips",
                     "MYSQL_PASSWORD": "newmips",
-                    "MYSQL_ROOT_PASSWORD": "P@ssw0rd+"
+                    "MYSQL_ROOT_PASSWORD": "P@ssw0rd+",
+                    "PG_DATA": "/var/lib/postgresql/data/pgdata",
+                    "POSTGRES_DB": "newmips",
+                    "POSTGRES_USER": "newmips",
+                    "POSTGRES_PASSWORD": "newmips",
+                    "POSTGRES_ROOT_PASSWORD": "P@ssw0rd+"
                 }
             }
         },

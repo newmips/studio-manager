@@ -44,4 +44,16 @@
             </select>
         </div>
     </div>
+    <div data-field="f_db_image" class="fieldLineHeight col-xs-12">
+        <div class="form-group">
+            <label for="f_db_image">
+                Database Image
+            </label>
+            <select class="form-control input" name="f_db_image">
+                {#allImagesDB}
+                    <option value='{.}'>{.}</option>
+                {/allImagesDB}
+            </select>
+        </div>
+    </div>
 </div>

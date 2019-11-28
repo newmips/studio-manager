@@ -203,7 +203,8 @@ router.get('/create_form', block_access.actionAccessMiddleware("environment", "c
             data.databaseIP = ipStructure + "." + ++lastIP;
 
             portainerAPI.getAvailabeImages().then(allImages => {
-                data.allImages = allImages;
+                data.allImages = allImages.filter(x => x.indexOf('mysql') == -1 && x.indexOf('postgres') == -1 );
+                data.allImagesDB = allImages.filter(x => x.indexOf('mysql') != -1 || x.indexOf('postgres') != -1 );
                 // Get association data that needed to be load directly here (to do so set loadOnStart param to true in options).
                 entity_helper.getLoadOnStartData(data, options).then(function(data) {
                     var view = req.query.ajax ? 'e_environment/create_fields' : 'e_environment/create';
@@ -219,7 +220,7 @@ router.get('/create_form', block_access.actionAccessMiddleware("environment", "c
 router.post('/create', block_access.actionAccessMiddleware("environment", "create"), function(req, res) {
 
     req.body.f_name = attr_helper.clearString(req.body.f_name).replace(/[-_.]/g, "").toLowerCase();
-    portainerAPI.generateStack(req.body.f_name, req.body.f_container_ip, req.body.f_database_ip, req.body.f_image).then(err => {
+    portainerAPI.generateStack(req.body.f_name, req.body.f_container_ip, req.body.f_database_ip, req.body.f_image, req.body.f_db_image).then(err => {
 
         var createObject = model_builder.buildForRoute(attributes, options, req.body);
 
