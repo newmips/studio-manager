@@ -185,12 +185,13 @@ router.get('/create_form', block_access.actionAccessMiddleware("environment", "c
         // Get new valid IP
         models.E_environment.findAll().then(environments => {
 
-            let lastIP = 0, splitIP, ipStructure;
+            let lastIP = 0, splitIP, ipStructure = null;
 
             for (env of environments) {
                 splitIPContainer = env.f_container_ip.split(".");
                 splitIPDatabase = env.f_database_ip.split(".");
-                ipStructure = env.f_container_ip.split(".").slice(0, -1).join(".");
+                if(!ipStructure)
+                    ipStructure = env.f_container_ip.split(".").slice(0, -1).join(".");
 
                 if(lastIP < splitIPContainer[splitIPContainer.length - 1])
                     lastIP = splitIPContainer[splitIPContainer.length - 1]
