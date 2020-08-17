@@ -43,7 +43,7 @@ router.post('/gitlab_discord_notif', function(req, res) {
                 discordMsg += usefullKeys[i] + ': ' + req.body[usefullKeys[i]] + '\n';
 
         if(req.body.project)
-            discordMsg += "Project: " + project.name + ' ' + project.web_url;
+            discordMsg += "Project: " + req.body.project.name + ' ' + req.body.project.web_url;
 
         if(req.body.commits && req.body.commits.length > 0) {
             for (var i = 0; i < req.body.commits.length; i++) {
