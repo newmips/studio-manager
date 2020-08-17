@@ -25,6 +25,11 @@ router.get('/status', function(req, res) {
     res.sendStatus(200);
 });
 
+router.post('/gitlab_discord_notif', function(req, res) {
+    console.log("TEST");
+    console.log(req.body);
+});
+
 router.post('/widgets', block_access.isLoggedIn, function(req, res) {
     var user = req.session.passport.user;
     var widgetsInfo = req.body.widgets;
