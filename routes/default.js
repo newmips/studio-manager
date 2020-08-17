@@ -28,13 +28,28 @@ router.get('/status', function(req, res) {
 });
 
 router.post('/gitlab_discord_notif', function(req, res) {
-    console.log("TEST");
-    console.log(req.headers['x-gitlab-token']);
     console.log(req.body);
     (async () => {
 
         if(discordConf.gitlabToken != req.headers['x-gitlab-token'])
             throw new Error('Invalid gitlab token');
+
+        // Generate Discord msg
+        const usefullKeys = ['event_name', 'name', 'owner_name', 'owner_email', 'user_name', 'user_email', 'project_name', 'user_username', 'user_email'];
+
+        let discordMsg = "";
+        for (var i = 0; i < usefullKeys.length; i++)
+            if(req.body[usefullKeys[i]])
+                discordMsg += usefullKeys[i] + ': ' + req.body[usefullKeys[i]] + '\n';
+
+        if(req.body.project)
+            discordMsg += "Project: " + project.name + ' ' + project.web_url;
+
+        if(req.body.commits && req.body.commits.length > 0) {
+            for (var i = 0; i < req.body.commits.length; i++) {
+                discordMsg += 'Commit: ' + req.body.commits[i].message + '\n';
+            }
+        }
 
         let callResults = await request({
             uri: discordConf.url,
@@ -43,7 +58,11 @@ router.post('/gitlab_discord_notif', function(req, res) {
                 'Content-Type': 'application/json'
             },
             body: {
-                "content": JSON.stringify(req.body)
+                "content": req.body.event_name,
+                "embeds": [{
+                    "title": "Détails",
+                    "description": discordMsg,
+                }]
             },
             json: true // Automatically stringifies the body to JSON
         });
