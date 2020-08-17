@@ -15,6 +15,7 @@ var entity_helper = require('../utils/entity_helper');
 var dust = require('dustjs-linkedin');
 var enums_radios = require('../utils/enum_radio.js');
 var component_helper = require('../utils/component_helper');
+const request = require('request-promise');
 
 // ===========================================
 // Redirection Home =====================
@@ -27,7 +28,57 @@ router.get('/status', function(req, res) {
 
 router.post('/gitlab_discord_notif', function(req, res) {
     console.log("TEST");
+    console.log(req);
     console.log(req.body);
+    let callResults = await request({
+        uri: "https://discordapp.com/api/webhooks/744918858254647446/XiI8kCGwJNPDr8-RvIdtS1KA_XmzlJRgg4MikZ8jmrDJXOUq5C9abAnbrvQKGoOWR-Ok",
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: {
+            "username": "Webhook",
+            "avatar_url": "https://i.imgur.com/4M34hi2.png",
+            "content": "Text message. Up to 2000 characters.",
+            "embeds": [{
+                "author": {
+                    "name": "Birdie♫",
+                    "url": "https://www.reddit.com/r/cats/",
+                    "icon_url": "https://i.imgur.com/R66g1Pe.jpg"
+                },
+                "title": "Title",
+                "url": "https://google.com/",
+                "description": "Text message. You can use Markdown here. *Italic* **bold** __underline__ ~~strikeout~~ [hyperlink](https://google.com) `code`",
+                "color": 15258703,
+                "fields": [{
+                    "name": "Text",
+                    "value": "More text",
+                    "inline": true
+                }, {
+                    "name": "Even more text",
+                    "value": "Yup",
+                    "inline": true
+                }, {
+                    "name": "Use `\"inline\": true` parameter, if you want to display fields in the same line.",
+                    "value": "okay..."
+                }, {
+                    "name": "Thanks!",
+                    "value": "You're welcome :wink:"
+                }],
+                "thumbnail": {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/4-Nature-Wallpapers-2014-1_ukaavUI.jpg"
+                },
+                "image": {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/A_picture_from_China_every_day_108.jpg"
+                },
+                "footer": {
+                    "text": "Woah! So cool! :smirk:",
+                    "icon_url": "https://i.imgur.com/fKL31aD.jpg"
+                }
+            }]
+        },
+        json: true // Automatically stringifies the body to JSON
+    });
 });
 
 router.post('/widgets', block_access.isLoggedIn, function(req, res) {
