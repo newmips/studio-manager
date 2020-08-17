@@ -4,6 +4,7 @@ var router = express.Router();
 var block_access = require('../utils/block_access');
 var languageConfig = require('../config/language');
 var globalConf = require('../config/global');
+var discordConf = require('../config/discord');
 var multer = require('multer');
 var fs = require('fs');
 var fse = require('fs-extra');
@@ -28,11 +29,11 @@ router.get('/status', function(req, res) {
 
 router.post('/gitlab_discord_notif', function(req, res) {
     console.log("TEST");
-    console.log(req);
+    console.log(req.headers['x-gitlab-token']);
     console.log(req.body);
     (async () => {
         let callResults = await request({
-            uri: "https://discordapp.com/api/webhooks/744918858254647446/XiI8kCGwJNPDr8-RvIdtS1KA_XmzlJRgg4MikZ8jmrDJXOUq5C9abAnbrvQKGoOWR-Ok",
+            uri: discordConf.url,
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
