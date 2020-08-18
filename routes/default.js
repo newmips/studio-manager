@@ -4,7 +4,6 @@ var router = express.Router();
 var block_access = require('../utils/block_access');
 var languageConfig = require('../config/language');
 var globalConf = require('../config/global');
-// var discordConf = require('../config/discord');
 var mattermostConf = require('../config/mattermost');
 var multer = require('multer');
 var fs = require('fs');
@@ -29,13 +28,12 @@ router.get('/status', function(req, res) {
 });
 
 router.post('/gitlab_discord_notif', function(req, res) {
-    console.log(req.body);
     (async () => {
 
         if(mattermostConf.gitlabToken != req.headers['x-gitlab-token'])
             throw new Error('Invalid gitlab token');
 
-        // Generate Discord msg
+        // Generate msg
         const usefullKeys = ['event_name', 'name', 'owner_name', 'owner_email', 'user_name', 'user_email', 'project_name', 'user_username', 'user_email'];
 
         let message = "";
@@ -52,22 +50,6 @@ router.post('/gitlab_discord_notif', function(req, res) {
             }
         }
 
-        // let callResults = await request({
-        //     uri: mattermostConf.incomingWebhook,
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: {
-        //         "content": req.body.event_name,
-        //         "embeds": [{
-        //             "title": "Détails",
-        //             "description": message,
-        //         }]
-        //     },
-        //     json: true // Automatically stringifies the body to JSON
-        // });
-
         let callResults = await request({
             uri: mattermostConf.incomingWebhook,
             method: 'POST',
@@ -75,7 +57,7 @@ router.post('/gitlab_discord_notif', function(req, res) {
                 'Content-Type': 'application/json'
             },
             body: {
-                "text": message
+                "text": "```" + message + "```"
             },
             json: true // Automatically stringifies the body to JSON
         });
