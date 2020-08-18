@@ -4,7 +4,8 @@ var router = express.Router();
 var block_access = require('../utils/block_access');
 var languageConfig = require('../config/language');
 var globalConf = require('../config/global');
-var discordConf = require('../config/discord');
+// var discordConf = require('../config/discord');
+var mattermostConf = require('../config/discord');
 var multer = require('multer');
 var fs = require('fs');
 var fse = require('fs-extra');
@@ -31,38 +32,50 @@ router.post('/gitlab_discord_notif', function(req, res) {
     console.log(req.body);
     (async () => {
 
-        if(discordConf.gitlabToken != req.headers['x-gitlab-token'])
+        if(mattermostConf.gitlabToken != req.headers['x-gitlab-token'])
             throw new Error('Invalid gitlab token');
 
         // Generate Discord msg
         const usefullKeys = ['event_name', 'name', 'owner_name', 'owner_email', 'user_name', 'user_email', 'project_name', 'user_username', 'user_email'];
 
-        let discordMsg = "";
+        let message = "";
         for (var i = 0; i < usefullKeys.length; i++)
             if(req.body[usefullKeys[i]])
-                discordMsg += usefullKeys[i] + ': ' + req.body[usefullKeys[i]] + '\n';
+                message += usefullKeys[i] + ': ' + req.body[usefullKeys[i]] + '\n';
 
         if(req.body.project)
-            discordMsg += "Project: " + req.body.project.name + ' ' + req.body.project.web_url;
+            message += "Project: " + req.body.project.name + ' ' + req.body.project.web_url;
 
         if(req.body.commits && req.body.commits.length > 0) {
             for (var i = 0; i < req.body.commits.length; i++) {
-                discordMsg += 'Commit: ' + req.body.commits[i].message + '\n';
+                message += 'Commit: ' + req.body.commits[i].message + '\n';
             }
         }
 
+        // let callResults = await request({
+        //     uri: mattermostConf.incomingWebhook,
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: {
+        //         "content": req.body.event_name,
+        //         "embeds": [{
+        //             "title": "Détails",
+        //             "description": message,
+        //         }]
+        //     },
+        //     json: true // Automatically stringifies the body to JSON
+        // });
+
         let callResults = await request({
-            uri: discordConf.url,
+            uri: mattermostConf.incomingWebhook,
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: {
-                "content": req.body.event_name,
-                "embeds": [{
-                    "title": "Détails",
-                    "description": discordMsg,
-                }]
+                "text": message
             },
             json: true // Automatically stringifies the body to JSON
         });
