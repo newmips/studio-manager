@@ -57,16 +57,15 @@ router.post('/gitlab_discord_notif', function(req, res) {
                 'Content-Type': 'application/json'
             },
             body: {
-                "text": "```" + message + "```"
+                "text": "```\n" + message + "```"
             },
             json: true // Automatically stringifies the body to JSON
         });
     })().then(_ => {
-        console.log('DONE');
-        res.status(200);
+        res.status(200).send(true);
     }).catch(err => {
         console.error(err);
-        res.status(500);
+        res.status(500).send(false);
     });
 });
 
