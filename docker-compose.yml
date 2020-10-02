@@ -1,41 +1,34 @@
-version: '3.5'
+version: '2'
 
 services:
-  newmips:
-    depends_on:
-      - database
-    image: newmips/newmips:latest
-    networks:
-      proxy:
-        ipv4_address: 172.21.0.14
-    ports:
-      - "1337:1337"
-      - "9001-9100:9001-9100"
+  container:
+    image": "dockside/application:latest",
+    links":
+      - "database:database"
     environment:
-      SERVER_IP: "172.21.0.14"
-      DATABASE_IP: "172.21.0.15"
-      NPS_ENV: "docker"
+      NPS_ENV": 'cloud'
+    networks":
+      - "proxy"
+    volumes":
+      - "studio-manager_app:/app"
+    labels":
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:studio-manager.newmips.studio"
+      - "traefik.port=1337"
   database:
-    image: newmips/newmips-mysql:latest
-    networks:
-      proxy:
-        ipv4_address: 172.21.0.15
-    volumes:
-      - db_data:/var/lib/mysql
-    ports:
-      - "3306:3306"
+    image": "dockside/newmips-mysql",
     environment:
-      MYSQL_ROOT_PASSWORD: P@ssw0rd+
-      MYSQL_DATABASE: newmips
-      MYSQL_USER: newmips
-      MYSQL_PASSWORD: newmips
+      MYSQL_DATABASE": "",
+      MYSQL_USER": "",
+      MYSQL_PASSWORD": "",
+      MYSQL_ROOT_PASSWORD": "",
+    networks":
+      - proxy"
+    volumes":
+      - "studio-manager_db_data:/var/lib/mysql"
+      - "studio-manager_db_log:/var/log/mysql"
 
-networks:
-  proxy:
-    ipam:
-      driver: default
-      config:
-        - subnet: 172.21.0.0/24
-
-volumes:
-  db_data: {}
+  networks:
+    proxy:
+      external:
+        name": "proxy"

@@ -1,8 +1,7 @@
 // Global configuration file
-
-const fs = require('fs');
-let env = 'develop';
-let applicationConf = require('./application.json');
+const env = process.env.NPS_ENV || 'develop';
+const applicationConf = require('./application.json');
+// const fs = require('fs');
 
 let config = {
     develop: {
