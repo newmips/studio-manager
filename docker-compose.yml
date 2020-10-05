@@ -2,7 +2,7 @@ version: '2'
 
 services:
   container:
-    image": "dockside/application:latest",
+    image": "dockside/studio-manager:latest",
     links":
       - "database:database"
     environment:
@@ -18,10 +18,10 @@ services:
   database:
     image": "dockside/newmips-mysql",
     environment:
-      MYSQL_DATABASE": "",
-      MYSQL_USER": "",
-      MYSQL_PASSWORD": "",
-      MYSQL_ROOT_PASSWORD": "",
+      MYSQL_DATABASE": "studio-manager",
+      MYSQL_USER": "studio-manager_user",
+      MYSQL_PASSWORD": "studio-manager_pwd2020+",
+      MYSQL_ROOT_PASSWORD": "P@ssw0rd+",
     networks":
       - proxy"
     volumes":
