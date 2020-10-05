@@ -2,33 +2,33 @@ version: '2'
 
 services:
   container:
-    image": "dockside/studio-manager:latest"
-    links":
+    image: "dockside/studio-manager:latest"
+    links:
       - "database:database"
     environment:
-      NPS_ENV": 'cloud'
-    networks":
+      NPS_ENV: "cloud"
+    networks:
       - "proxy"
-    volumes":
+    volumes:
       - "studio-manager_app:/app"
-    labels":
+    labels:
       - "traefik.enable=true"
       - "traefik.frontend.rule=Host:studio-manager.newmips.studio"
       - "traefik.port=1337"
   database:
-    image": "dockside/newmips-mysql"
+    image: "dockside/newmips-mysql"
     environment:
-      MYSQL_DATABASE": ""
-      MYSQL_USER": "",
-      MYSQL_PASSWORD": "",
-      MYSQL_ROOT_PASSWORD": ""
-    networks":
+      MYSQL_DATABASE: ""
+      MYSQL_USER: ""
+      MYSQL_PASSWORD: ""
+      MYSQL_ROOT_PASSWORD: ""
+    networks:
       - proxy"
-    volumes":
+    volumes:
       - "studio-manager_db_data:/var/lib/mysql"
       - "studio-manager_db_log:/var/log/mysql"
 
   networks:
     proxy:
       external:
-        name": "proxy"
+        name: "proxy"
