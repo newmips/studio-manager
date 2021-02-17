@@ -2,7 +2,7 @@ version: '2'
 
 services:
   container:
-    image: "dockside/studio-manager:latest"
+    image: "studio-manager:latest"
     links:
       - "database:database"
     environment:
@@ -16,7 +16,7 @@ services:
       - "traefik.frontend.rule=Host:studio-manager.newmips.studio"
       - "traefik.port=1337"
   database:
-    image: "dockside/newmips-mysql"
+    image: "newmips-mysql"
     environment:
       MYSQL_DATABASE: ""
       MYSQL_USER: ""
@@ -28,7 +28,7 @@ services:
       - "studio-manager_db_data:/var/lib/mysql"
       - "studio-manager_db_log:/var/log/mysql"
 
-  networks:
-    proxy:
-      external:
-        name: "proxy"
+networks:
+  proxy:
+    external:
+      name: "proxy"
